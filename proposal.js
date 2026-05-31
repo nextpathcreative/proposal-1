@@ -47,28 +47,70 @@
     var target = parseInt(el.getAttribute("data-count"), 10) || 0;
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) { el.textContent = target; return; }
+
+    // Cancel any in-flight animation before restarting.
+    if (el.__countRaf) {
+      cancelAnimationFrame(el.__countRaf);
+      el.__countRaf = null;
+    }
+
+    el.textContent = "0";
     var dur = 1100, t0 = performance.now();
     function tick(t) {
       var p = Math.min(1, (t - t0) / dur);
       var eased = 1 - Math.pow(1 - p, 5);
       el.textContent = Math.round(eased * target);
-      if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
+      if (p < 1) {
+        el.__countRaf = requestAnimationFrame(tick);
+      } else {
+        el.textContent = target;
+        el.__countRaf = null;
+      }
     }
-    requestAnimationFrame(tick);
+    el.__countRaf = requestAnimationFrame(tick);
   }
+
+  function resetCount(el) {
+    if (el.__countRaf) {
+      cancelAnimationFrame(el.__countRaf);
+      el.__countRaf = null;
+    }
+    el.textContent = "0";
+  }
+
   function initCountUp() {
     var els = Array.prototype.slice.call(document.querySelectorAll(".countup"));
     if (!els.length) return;
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      els.forEach(function (e) {
+        e.textContent = parseInt(e.getAttribute("data-count"), 10) || 0;
+      });
+      return;
+    }
+
     if (!("IntersectionObserver" in window)) { els.forEach(animateCount); return; }
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { animateCount(en.target); io.unobserve(en.target); }
+        var el = en.target;
+        if (en.isIntersecting) {
+          if (el.__countInView) return;
+          el.__countInView = true;
+          animateCount(el);
+        } else {
+          el.__countInView = false;
+          resetCount(el);
+        }
       });
     }, { threshold: 0.4 });
-    els.forEach(function (e) { e.textContent = "0"; io.observe(e); });
-    setTimeout(function () {
-      els.forEach(function (e) { if (e.textContent === "0") animateCount(e); });
-    }, 2600);
+
+    els.forEach(function (e) {
+      resetCount(e);
+      e.__countInView = false;
+      io.observe(e);
+    });
   }
 
   /* ------------------------- Sticky header shadow --------------------- */

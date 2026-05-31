@@ -124,7 +124,7 @@ img { max-width: 100%; display: block; }
 
 /* trust strip */
 .d-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-2); }
-.d-strip .in { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; justify-content: space-between; padding: 18px 0; }
+.d-strip .in { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; justify-content: space-between; padding: 18px 10px; }
 .d-strip .item { display: flex; align-items: center; gap: 10px; }
 .d-strip .item .big { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
 .d-strip .item .lbl { font-size: 12.5px; color: var(--muted); line-height: 1.25; }
@@ -190,7 +190,7 @@ img { max-width: 100%; display: block; }
   .dd-day { padding: 8px 2px; }
   .dd-day .d { font-size: 15px; }
   .dd-slot { padding: 10px 11px; }
-  .d-strip .in { gap: 14px 20px; padding: 16px 0; }
+  .d-strip .in { gap: 14px 20px; padding: 16px 10px; }
   .d-strip .item .big { font-size: 19px; }
   .d-strip .item [data-lucide] { width: 19px; height: 19px; }
   .d-sec { padding: 34px 0; }

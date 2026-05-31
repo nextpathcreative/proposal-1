@@ -1,13 +1,10 @@
 /* =============================================================
-   Cornerstone Plumbing — Colors & Type
-   Two directions share semantics; only display fonts & palette differ.
-   Switch via:  <html data-theme="a">  or  <html data-theme="b">
-   ============================================================= */
+  Cornerstone Plumbing — Colors & Type
+  Fixed to the current proposal direction and typography.
+  ============================================================= */
 
-/* ---------- Font imports ----------
-   All six pairings load on one request. Drop any pairing you don't ship.
-   ---------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* ---------- Font imports ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* ---------- BASE TOKENS (shared) ---------- */
 :root {
@@ -124,9 +121,8 @@
   --nav-h: 64px;
 }
 
-/* ---------- DIRECTION A — "Modern Trades" (default) ---------- */
-:root,
-[data-theme="a"] {
+/* ---------- Fixed color direction ---------- */
+:root {
   /* Brand */
   --accent:       #0E4F8A;   /* deep navy — primary action */
   --accent-hover: #0A3D6E;
@@ -157,106 +153,13 @@
   --fg-link:      #0E4F8A;
 }
 
-/* ---------- DIRECTION B — "Established Family" ---------- */
-[data-theme="b"] {
-  --display-weight: 600;
-  --display-style: normal;
-
-  /* Brand */
-  --accent:       #2C4A6B;   /* slate-blue */
-  --accent-hover: #20374F;
-  --accent-press: #16273A;
-  --accent-tint:  #E8ECF1;
-  --accent-2:     #A06A3F;   /* sand / warm tan */
-  --accent-2-tint:#F1E7D9;
-
-  /* Surfaces */
-  --bg-base:      #F7F2EA;   /* cream */
-  --bg-subtle:    #EFE8DC;
-  --bg-muted:     #E6DDCB;
-  --bg-inverse:   #1F1B16;   /* warm ink */
-  --bg-inverse-2: #2A2520;
-
-  /* Borders */
-  --border:       #E5DCC9;
-  --border-strong:#CFC2A6;
-  --border-inverse: rgba(247,242,234,0.12);
-
-  /* Foreground */
-  --fg:           #1F1B16;
-  --fg-muted:     #5B5346;
-  --fg-subtle:    #7A715F;
-  --fg-inverse:   #F7F2EA;
-  --fg-inverse-muted: rgba(247,242,234,0.72);
-  --fg-on-accent: #F7F2EA;
-  --fg-link:      #2C4A6B;
-}
-
-/* =============================================================
-   TYPE PAIRINGS — set via `<html data-pairing="a..f">`
-   These define ONLY --font-display / --font-body / --display-weight,
-   and minor per-font tracking adjustments. Independent of color theme.
-   ----------------------------------------------------------------
-   Pairings:
-     a — Modern Trades        Archivo (800) + Public Sans
-     b — Established Family   Newsreader (600) + Public Sans
-     c — Industrial Geometric Space Grotesk (700) + DM Sans
-     d — Editorial Calm       Source Serif 4 (600) + Source Sans 3
-     e — Premium Serif        Instrument Serif (400) + Instrument Sans
-     f — Unified Sans         Manrope (800) + Manrope
-   ============================================================= */
-
-/* Default pairing (a) — applied to :root so it's there with no attr */
-:root,
-[data-pairing="a"] {
-  --font-display: 'Archivo', system-ui, sans-serif;
-  --font-body:    'Public Sans', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-  --display-weight: 800;
-  --tracking-display: -0.025em;
-}
-[data-pairing="b"] {
-  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --font-body:    'Public Sans', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
-  --display-weight: 600;
-  --tracking-display: -0.012em;
-}
-[data-pairing="c"] {
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
-  --display-weight: 700;
-  --tracking-display: -0.02em;
-}
-[data-pairing="d"] {
-  --font-display: 'Source Serif 4', Georgia, serif;
-  --font-body:    'Source Sans 3', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
-  --display-weight: 600;
-  --tracking-display: -0.01em;
-}
-[data-pairing="e"] {
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body:    'Instrument Sans', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
-  --display-weight: 400;
-  --tracking-display: -0.025em;
-}
-[data-pairing="f"] {
+/* ---------- Fixed type pairing ---------- */
+:root {
   --font-display: 'Manrope', system-ui, sans-serif;
   --font-body:    'Manrope', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
   --display-weight: 800;
   --tracking-display: -0.03em;
-}
-
-/* Auto-pair: if a theme is set but no pairing, mirror the theme.
-   These are LOW-specificity selectors so an explicit data-pairing wins. */
-[data-theme="b"]:not([data-pairing]) {
-  --font-display: 'Newsreader', Georgia, serif;
-  --display-weight: 600;
-  --tracking-display: -0.012em;
 }
 
 /* =============================================================
