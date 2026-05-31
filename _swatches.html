@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brand color swatches</title>
+<style>
+  body { margin: 0; font-family: 'Manrope', system-ui, sans-serif; background: #fff; color: #18191C; padding: 28px; }
+  h1 { font-size: 20px; letter-spacing: -0.02em; margin: 0 0 4px; }
+  p.sub { color: #65625C; font-size: 14px; margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 760px; }
+  .card { border: 1px solid #E9E5DE; border-radius: 14px; overflow: hidden; }
+  .band { height: 84px; display: flex; align-items: flex-end; padding: 10px 14px; }
+  .band span { color: #fff; font-weight: 800; font-size: 13px; letter-spacing: 0.04em; }
+  .body { padding: 14px; }
+  .name { font-weight: 800; font-size: 16px; letter-spacing: -0.01em; }
+  .hex { font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: #65625C; margin-top: 2px; }
+  .btn { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; padding: 11px 18px; border-radius: 10px; color: #fff; font-weight: 700; font-size: 14px; }
+  .pill { display: inline-block; margin-top: 10px; padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+</style>
+</head>
+<body>
+  <h1>Brand color options</h1>
+  <p class="sub">Each card shows the color as a band, a CTA button, and a tinted pill (the lighter shades the page derives from it).</p>
+  <div class="grid" id="grid"></div>
+  <script>
+    var COLORS = [
+      { name: "Teal (original)", hex: "#0E8C86" },
+      { name: "Cobalt",          hex: "#2B5FD0" },
+      { name: "Rose red",        hex: "#E11D48" },
+      { name: "Fuchsia",         hex: "#DB2777" },
+      { name: "Hot pink",        hex: "#EC4899" },
+      { name: "Ember",           hex: "#DB5436" },
+      { name: "Blaze orange",    hex: "#EA580C" },
+      { name: "Crimson",         hex: "#DC2626" }
+    ];
+    var g = document.getElementById("grid");
+    COLORS.forEach(function (c) {
+      var tint = "color-mix(in oklab, " + c.hex + ", #ffffff 86%)";
+      var deep = "color-mix(in oklab, " + c.hex + ", #1a1208 42%)";
+      g.insertAdjacentHTML("beforeend",
+        '<div class="card">' +
+          '<div class="band" style="background:' + c.hex + '"><span>' + c.hex + '</span></div>' +
+          '<div class="body">' +
+            '<div class="name">' + c.name + '</div>' +
+            '<div class="hex">' + c.hex + '</div>' +
+            '<div class="btn" style="background:' + c.hex + '">Book a 15-minute setup call</div>' +
+            '<span class="pill" style="background:' + tint + ';color:' + deep + '">tinted accent</span>' +
+          '</div>' +
+        '</div>');
+    });
+  </script>
+</body>
+</html>

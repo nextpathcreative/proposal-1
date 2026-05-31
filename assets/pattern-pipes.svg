@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <pattern id="p" width="80" height="80" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#0F172A" stroke-width="1.25" opacity="0.18">
+        <path d="M0 20 H30 a10 10 0 0 1 10 10 V60 a10 10 0 0 0 10 10 H80"></path>
+        <path d="M20 0 V30 a10 10 0 0 0 10 10 H60 a10 10 0 0 1 10 10 V80"></path>
+        <circle cx="30" cy="30" r="2.5" fill="#0F172A"></circle>
+        <circle cx="50" cy="50" r="2.5" fill="#0F172A"></circle>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="240" height="240" fill="url(#p)"></rect>
+</svg>

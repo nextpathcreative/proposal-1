@@ -1,0 +1,325 @@
+/* =============================================================
+   Cornerstone Plumbing — Colors & Type
+   Two directions share semantics; only display fonts & palette differ.
+   Switch via:  <html data-theme="a">  or  <html data-theme="b">
+   ============================================================= */
+
+/* ---------- Font imports ----------
+   All six pairings load on one request. Drop any pairing you don't ship.
+   ---------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ---------- BASE TOKENS (shared) ---------- */
+:root {
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Radius */
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 6px;
+  --radius-3: 12px;
+  --radius-full: 999px;
+
+  /* ---------- Type scale ----------
+     Modular scale, ratio 1.25 (major third).
+     Tokens are exposed as both T-shirt steps (--fs-xs … --fs-7xl) and
+     semantic roles (--fs-h1, --fs-body, etc.) — semantic tokens reference
+     the steps so you can re-pitch the whole system by editing the steps.
+     ---------------------------------------------- */
+  --fs-2xs:  11px;   /* 0.6875rem · legal, captions */
+  --fs-xs:   12px;   /* 0.75rem   · eyebrows, microcopy */
+  --fs-sm:   14px;   /* 0.875rem  · helper text, dense UI */
+  --fs-base: 16px;   /* 1rem      · body */
+  --fs-md:   18px;   /* 1.125rem  · lede, body-lg */
+  --fs-lg:   20px;   /* 1.25rem   · h4, big UI */
+  --fs-xl:   24px;   /* 1.5rem    · h3 */
+  --fs-2xl:  30px;   /* 1.875rem  · h2 */
+  --fs-3xl:  36px;   /* 2.25rem   · h1 floor */
+  --fs-4xl:  44px;   /* 2.75rem   · h1 / display-2 floor */
+  --fs-5xl:  56px;   /* 3.5rem    · display-2 ceiling / display-1 floor */
+  --fs-6xl:  72px;   /* 4.5rem    · display-1 ceiling */
+  --fs-7xl:  88px;   /* 5.5rem    · oversized hero only */
+
+  /* Fluid ramp — clamp(min, viewport, max). Min at 360px, max at 1280px.
+     Generated from `clamp(MIN, MIN + (MAX-MIN) * ((100vw - 360px) / 920), MAX)`
+     and rounded for readability. */
+  --fs-display-1: clamp(40px, 3.4vw + 28px, 72px);   /* hero only */
+  --fs-display-2: clamp(32px, 2.6vw + 23px, 56px);   /* section heros */
+  --fs-h1:        clamp(28px, 1.7vw + 22px, 44px);
+  --fs-h2:        clamp(24px, 0.9vw + 21px, 30px);
+  --fs-h3:        24px;
+  --fs-h4:        20px;
+  --fs-h5:        18px;
+  --fs-body-lg:   var(--fs-md);
+  --fs-body:      var(--fs-base);
+  --fs-small:     var(--fs-sm);
+  --fs-eyebrow:   var(--fs-xs);
+
+  /* Line-height tokens */
+  --lh-none:    1;
+  --lh-tight:   1.05;   /* display, oversized */
+  --lh-snug:    1.18;   /* headings */
+  --lh-ui:      1.35;   /* dense UI, buttons */
+  --lh-body:    1.55;   /* paragraph */
+  --lh-relaxed: 1.7;    /* long-form / blog */
+  --lh-display: var(--lh-tight);
+  --lh-heading: var(--lh-snug);
+
+  /* Letter-spacing (tracking) tokens */
+  --tracking-tightest: -0.04em;
+  --tracking-tighter:  -0.03em;
+  --tracking-tight:    -0.02em;
+  --tracking-snug:     -0.01em;
+  --tracking-normal:   0;
+  --tracking-wide:     0.04em;
+  --tracking-wider:    0.08em;
+  --tracking-widest:   0.12em;
+  --tracking-display:  var(--tracking-tight);
+  --tracking-body:     var(--tracking-normal);
+  --tracking-eyebrow:  var(--tracking-widest);
+
+  /* Font-weight tokens */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extra:    800;
+  --display-weight: var(--fw-bold);
+
+  /* Semantic colors (shared across themes) */
+  --c-success: #1F8A5B;
+  --c-success-bg: #E8F5EE;
+  --c-warning: #B45309;
+  --c-warning-bg: #FEF3E2;
+  --c-danger:  #B91C1C;
+  --c-danger-bg: #FEE7E7;
+  --c-info:    #1E5BB8;
+  --c-info-bg: #E6EEFB;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(15,23,42,0.04), 0 1px 1px rgba(15,23,42,0.03);
+  --shadow-md: 0 6px 16px -8px rgba(15,23,42,0.16), 0 2px 4px rgba(15,23,42,0.04);
+  --shadow-lg: 0 24px 48px -16px rgba(15,23,42,0.20);
+  --shadow-focus: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--accent);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-micro: 150ms;
+  --t-ui: 240ms;
+  --t-section: 400ms;
+
+  /* Layout */
+  --content-max: 1200px;
+  --content-wide: 1440px;
+  --nav-h: 64px;
+}
+
+/* ---------- DIRECTION A — "Modern Trades" (default) ---------- */
+:root,
+[data-theme="a"] {
+  /* Brand */
+  --accent:       #0E4F8A;   /* deep navy — primary action */
+  --accent-hover: #0A3D6E;
+  --accent-press: #082E54;
+  --accent-tint:  #E6EEF6;
+  --accent-2:     #C2731F;   /* copper warm accent */
+  --accent-2-tint:#F7EEDE;
+
+  /* Surfaces */
+  --bg-base:      #FFFFFF;
+  --bg-subtle:    #F5F8FB;
+  --bg-muted:     #EBF0F5;
+  --bg-inverse:   #0F172A;   /* ink charcoal */
+  --bg-inverse-2: #1B2536;
+
+  /* Borders */
+  --border:       #E2E8F0;
+  --border-strong:#CBD5E1;
+  --border-inverse: rgba(255,255,255,0.12);
+
+  /* Foreground */
+  --fg:           #0F172A;
+  --fg-muted:     #475569;
+  --fg-subtle:    #64748B;
+  --fg-inverse:   #FFFFFF;
+  --fg-inverse-muted: rgba(255,255,255,0.72);
+  --fg-on-accent: #FFFFFF;
+  --fg-link:      #0E4F8A;
+}
+
+/* ---------- DIRECTION B — "Established Family" ---------- */
+[data-theme="b"] {
+  --display-weight: 600;
+  --display-style: normal;
+
+  /* Brand */
+  --accent:       #2C4A6B;   /* slate-blue */
+  --accent-hover: #20374F;
+  --accent-press: #16273A;
+  --accent-tint:  #E8ECF1;
+  --accent-2:     #A06A3F;   /* sand / warm tan */
+  --accent-2-tint:#F1E7D9;
+
+  /* Surfaces */
+  --bg-base:      #F7F2EA;   /* cream */
+  --bg-subtle:    #EFE8DC;
+  --bg-muted:     #E6DDCB;
+  --bg-inverse:   #1F1B16;   /* warm ink */
+  --bg-inverse-2: #2A2520;
+
+  /* Borders */
+  --border:       #E5DCC9;
+  --border-strong:#CFC2A6;
+  --border-inverse: rgba(247,242,234,0.12);
+
+  /* Foreground */
+  --fg:           #1F1B16;
+  --fg-muted:     #5B5346;
+  --fg-subtle:    #7A715F;
+  --fg-inverse:   #F7F2EA;
+  --fg-inverse-muted: rgba(247,242,234,0.72);
+  --fg-on-accent: #F7F2EA;
+  --fg-link:      #2C4A6B;
+}
+
+/* =============================================================
+   TYPE PAIRINGS — set via `<html data-pairing="a..f">`
+   These define ONLY --font-display / --font-body / --display-weight,
+   and minor per-font tracking adjustments. Independent of color theme.
+   ----------------------------------------------------------------
+   Pairings:
+     a — Modern Trades        Archivo (800) + Public Sans
+     b — Established Family   Newsreader (600) + Public Sans
+     c — Industrial Geometric Space Grotesk (700) + DM Sans
+     d — Editorial Calm       Source Serif 4 (600) + Source Sans 3
+     e — Premium Serif        Instrument Serif (400) + Instrument Sans
+     f — Unified Sans         Manrope (800) + Manrope
+   ============================================================= */
+
+/* Default pairing (a) — applied to :root so it's there with no attr */
+:root,
+[data-pairing="a"] {
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body:    'Public Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --display-weight: 800;
+  --tracking-display: -0.025em;
+}
+[data-pairing="b"] {
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body:    'Public Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --display-weight: 600;
+  --tracking-display: -0.012em;
+}
+[data-pairing="c"] {
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --display-weight: 700;
+  --tracking-display: -0.02em;
+}
+[data-pairing="d"] {
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body:    'Source Sans 3', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --display-weight: 600;
+  --tracking-display: -0.01em;
+}
+[data-pairing="e"] {
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'Instrument Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --display-weight: 400;
+  --tracking-display: -0.025em;
+}
+[data-pairing="f"] {
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --display-weight: 800;
+  --tracking-display: -0.03em;
+}
+
+/* Auto-pair: if a theme is set but no pairing, mirror the theme.
+   These are LOW-specificity selectors so an explicit data-pairing wins. */
+[data-theme="b"]:not([data-pairing]) {
+  --font-display: 'Newsreader', Georgia, serif;
+  --display-weight: 600;
+  --tracking-display: -0.012em;
+}
+
+/* =============================================================
+   Semantic typography helpers — apply with class names or as base
+   ============================================================= */
+.cs-display-1, .cs-display-2, .cs-h1, .cs-h2, .cs-h3, .cs-h4 {
+  font-family: var(--font-display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--lh-display);
+  color: var(--fg);
+  margin: 0;
+  text-wrap: balance;
+}
+.cs-display-1 { font-size: var(--fs-display-1); }
+.cs-display-2 { font-size: var(--fs-display-2); }
+.cs-h1        { font-size: var(--fs-h1); line-height: var(--lh-heading); }
+.cs-h2        { font-size: var(--fs-h2); line-height: var(--lh-heading); }
+.cs-h3        { font-size: var(--fs-h3); line-height: var(--lh-heading); }
+.cs-h4        { font-size: var(--fs-h4); line-height: var(--lh-heading); }
+
+.cs-body, .cs-body-lg, .cs-small, .cs-xs {
+  font-family: var(--font-body);
+  color: var(--fg);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+.cs-body-lg { font-size: var(--fs-body-lg); }
+.cs-body    { font-size: var(--fs-body); }
+.cs-small   { font-size: var(--fs-small); line-height: var(--lh-ui); }
+.cs-xs      { font-size: var(--fs-xs);    line-height: var(--lh-ui); }
+
+.cs-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  line-height: 1;
+}
+
+.cs-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+}
+
+.cs-muted   { color: var(--fg-muted); }
+.cs-subtle  { color: var(--fg-subtle); }
+
+/* Base body */
+html, body {
+  font-family: var(--font-body);
+  color: var(--fg);
+  background: var(--bg-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-1);
+}
