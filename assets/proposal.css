@@ -181,7 +181,10 @@ strong, b { font-weight: 700; color: var(--ink); }
 .hdr-spacer { flex: 1; }
 .hdr-contact { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: var(--ink); white-space: nowrap; }
 .hdr-contact [data-lucide] { width: 15px; height: 15px; color: var(--brand-pop); }
-@media (max-width: 760px) { .hdr-contact-label { display: none; } .brand-chip { display: none; } }
+@media (max-width: 760px) {
+  .hdr-contact { display: none; }
+  .brand-chip { display: none; }
+}
 
 /* ----------------------------- Buttons ----------------------------- */
 .btn {
@@ -253,6 +256,13 @@ strong, b { font-weight: 700; color: var(--ink); }
 .hero-pillrow { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
 .hero-pill { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--ink); }
 .hero-pill [data-lucide] { width: 16px; height: 16px; color: var(--brand-pop); stroke-width: 2.4; }
+@media (max-width: 760px) {
+  .hero-pillrow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .hero-pill { min-width: 0; }
+}
+@media (max-width: 460px) {
+  .hero-pillrow { grid-template-columns: 1fr; }
+}
 
 /* Two-column hero — text + illustration. Section width stays container-large
    (nav-matched). Text column has one common width so the divider, title,
@@ -419,6 +429,16 @@ strong, b { font-weight: 700; color: var(--ink); }
 .feat-ic [data-lucide] { width: 20px; height: 20px; stroke-width: 2.2; }
 .feat-body b { font-family: var(--font-display); font-weight: 700; font-size: 16.5px; letter-spacing: -0.01em; color: var(--ink); display: block; margin-bottom: 3px; }
 .feat-body span { font-size: 14.5px; color: var(--fg-muted); line-height: 1.45; }
+@media (max-width: 760px) {
+  .feat-grid > * { min-width: 0; }
+  .what_content-left { max-width: 100%; }
+  .feat-list { max-width: 100%; }
+  .section_what .body,
+  .feat-body b,
+  .feat-body span,
+  .phone-cap { overflow-wrap: anywhere; }
+  .phone { width: 100%; max-width: 360px; }
+}
 
 /* ----------------------------- Booking modal ----------------------------- */
 .modal-overlay {
@@ -570,20 +590,28 @@ strong, b { font-weight: 700; color: var(--ink); }
 .finalcta .h-xl { max-width: 18ch; margin: 0 auto; }
 .finalcta .lede { margin: 20px auto 0; text-align: center; }
 .finalcta-actions { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 32px; }
-.finalcta-sub { font-size: 14px; color: var(--on-ink-muted); }
+.finalcta-sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--on-ink-muted);
+}
+.finalcta-sub span { display: block; }
 .finalcta-sub a { color: #fff; font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
 .surface-ink .eyebrow { color: color-mix(in oklab, var(--brand-pop), #ffffff 30%); }
 .surface-ink .lede { color: var(--on-ink-muted); }
 
 /* ----------------------------- Footer ----------------------------- */
 .foot { background: var(--ink); color: var(--on-ink); padding: 48px 0 40px; }
-.foot-inner { display: flex; flex-direction: column; gap: 18px; }
-.foot-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.foot-brand { display: flex; align-items: center; gap: 11px; }
-.foot-contact { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--on-ink-muted); }
+.foot-inner { display: flex; flex-direction: column; gap: 18px; align-items: center; text-align: center; }
+.foot-top { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+.foot-brand { display: flex; align-items: center; justify-content: center; gap: 11px; }
+.foot-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; font-size: 14px; color: var(--on-ink-muted); }
 .foot-contact a { color: #fff; text-decoration: none; }
 .foot-contact a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.foot-fine { font-size: 12.5px; color: rgba(255,255,255,0.5); line-height: 1.5; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); max-width: 70ch; }
+.foot-fine { font-size: 12.5px; color: rgba(255,255,255,0.5); line-height: 1.5; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); max-width: 70ch; margin: 0 auto; text-align: center; }
 
 /* ----------------------------- Sticky call bar (mobile) ----------------------------- */
 .callbar {
@@ -596,7 +624,19 @@ strong, b { font-weight: 700; color: var(--ink); }
 .callbar .txt span { font-size: 11.5px; color: rgba(255,255,255,0.6); }
 .callbar .cta { background: var(--brand); color: #fff; padding: 10px 15px; border-radius: 9px; font-weight: 700; font-size: 13.5px; display: inline-flex; align-items: center; gap: 7px; text-decoration: none; white-space: nowrap; }
 .callbar .cta [data-lucide] { width: 15px; height: 15px; }
-@media (max-width: 760px) { .callbar { display: flex; } body { padding-bottom: 78px; } }
+@media (max-width: 760px) {
+  .callbar { display: flex; }
+  .callbar .txt { display: flex; align-items: center; }
+  .callbar .txt b { display: none; }
+  body { padding-bottom: 78px; }
+}
+@media (max-width: 420px) {
+  .callbar { left: 8px; right: 8px; bottom: 8px; padding: 10px 10px 10px 12px; gap: 8px; }
+  .callbar .txt b { font-size: 12.5px; }
+  .callbar .txt span { font-size: 10.5px; }
+  .callbar .cta { padding: 9px 11px; font-size: 12px; gap: 5px; }
+  .callbar .cta [data-lucide] { width: 13px; height: 13px; }
+}
 
 /* ----------------------------- Customizer (type + color) ----------------------------- */
 .cust {
