@@ -113,7 +113,7 @@ function DemoApp() {
         <div className="d-banner">
           <DIcon name="flask-conical" />
           <span><b>Live sample</b> built by NextPath Creative — this is a demo, tap anything.</span>
-          <a href="../proposal.html">← Back to proposal</a>
+          <a href="../index.html">← Back to proposal</a>
         </div>
       )}
       <header className="d-header">
