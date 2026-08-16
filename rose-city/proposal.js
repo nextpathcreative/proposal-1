@@ -373,12 +373,42 @@
     if (!screen) return;
     var activate = screen.querySelector(".phone-activate");
     var done = screen.querySelector(".phone-done");
-    if (activate) activate.addEventListener("click", function () { screen.classList.add("is-active"); });
-    if (done) done.addEventListener("click", function () { screen.classList.remove("is-active"); });
+    var iframe = screen.querySelector("iframe");
+    var isMobile = !!(window.matchMedia && window.matchMedia("(max-width: 760px)").matches);
+
+    // Mobile Safari won't scroll an iframe internally, so on mobile we make the
+    // phone box the scroller: size the iframe to its full content height and let
+    // the box (CSS .is-active) scroll through it. The iframe stays
+    // pointer-events:none (CSS), so the finger drives the box's scroll. Content
+    // height settles after load, so re-measure on load, on delays, via
+    // ResizeObserver, and again the moment the user taps to explore.
+    function fitIframe() {
+      if (!isMobile || !iframe) return;
+      try {
+        var doc = iframe.contentDocument;
+        if (!doc || !doc.body) return;
+        var h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+        if (h > 200) iframe.style.height = h + "px";
+      } catch (e) { /* not ready / cross-origin — keep the default height */ }
+    }
+    if (iframe) {
+      iframe.addEventListener("load", function () {
+        fitIframe();
+        setTimeout(fitIframe, 300);
+        setTimeout(fitIframe, 1200);
+        try {
+          var ro = new ResizeObserver(fitIframe);
+          if (iframe.contentDocument && iframe.contentDocument.body) ro.observe(iframe.contentDocument.body);
+        } catch (e) { /* ResizeObserver unavailable — the delayed re-measures cover it */ }
+      });
+      fitIframe();
+    }
+
+    function exit() { screen.classList.remove("is-active"); screen.scrollTop = 0; }
+    if (activate) activate.addEventListener("click", function () { fitIframe(); screen.classList.add("is-active"); });
+    if (done) done.addEventListener("click", exit);
     document.addEventListener("click", function (e) {
-      if (screen.classList.contains("is-active") && !e.target.closest(".phone")) {
-        screen.classList.remove("is-active");
-      }
+      if (screen.classList.contains("is-active") && !e.target.closest(".phone")) exit();
     });
   }
 
