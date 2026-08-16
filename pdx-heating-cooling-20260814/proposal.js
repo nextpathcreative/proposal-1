@@ -159,9 +159,10 @@
   }
 
   /* --------------------------- Booking modal -------------------------- */
-  // Bookable window: 11:00am – 6:30pm, 30-minute steps (12-hour, no meridiem).
-  var SLOTS = ["11:00", "11:30", "12:00", "12:30", "1:00", "1:30", "2:00", "2:30",
-               "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30"];
+  // Bookable window: 11:00am – 6:00pm on the hour (a 30-min call from the 6:00
+  // slot ends at 6:30, so the window still runs to 6:30). Hourly keeps the grid
+  // compact so the modal fits without scrolling on mobile.
+  var SLOTS = ["11:00", "12:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00"];
 
   function buildDays() {
     var out = [], c = new Date();
@@ -174,10 +175,11 @@
     return out;
   }
   function bookedSet(date) {
-    var seed = date.toDateString().split("").reduce(function (a, c) { return a + c.charCodeAt(0); }, 0);
-    var t = {};
-    SLOTS.forEach(function (s, i) { if ((seed * (i + 5)) % 10 < 3) t[s] = true; });
-    return t;
+    // All offered times show as open — no simulated "already booked" slots, so
+    // nothing looks arbitrarily closed. Simon confirms the exact time by text
+    // after a request comes in. To show a realistic scattering of taken slots
+    // instead, return a map keyed by slot, e.g. { "2:00": true }.
+    return {};
   }
   function dn(d) {
     var t = new Date(), tm = new Date(t.getTime() + 86400000);
