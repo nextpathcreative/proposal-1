@@ -362,6 +362,24 @@
     });
   }
 
+  /* Phone "tap to explore" (mobile only — the controls are display:none on desktop).
+     The iframe is inert by default via CSS so the page scrolls through it; tapping
+     activates inline scrolling, and Done — or a tap anywhere off the phone — exits.
+     Taps inside the iframe don't bubble past its boundary, so they never exit. */
+  function initPhoneActivate() {
+    var screen = document.querySelector(".phone-screen");
+    if (!screen) return;
+    var activate = screen.querySelector(".phone-activate");
+    var done = screen.querySelector(".phone-done");
+    if (activate) activate.addEventListener("click", function () { screen.classList.add("is-active"); });
+    if (done) done.addEventListener("click", function () { screen.classList.remove("is-active"); });
+    document.addEventListener("click", function (e) {
+      if (screen.classList.contains("is-active") && !e.target.closest(".phone")) {
+        screen.classList.remove("is-active");
+      }
+    });
+  }
+
   /* ------------------------------- Boot ------------------------------- */
   function boot() {
     icons();
@@ -370,6 +388,7 @@
     initHeader();
     initFaq();
     initBookTriggers();
+    initPhoneActivate();
     setTimeout(icons, 300);
   }
 
