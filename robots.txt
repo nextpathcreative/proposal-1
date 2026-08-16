@@ -1,0 +1,9 @@
+# Client proposals are private, one-off documents sent by direct link.
+# Nothing under this host should ever appear in search results.
+# Each per-prospect page ALSO carries <meta name="robots" content="noindex">,
+# because robots.txt only blocks crawling — a page linked from elsewhere can
+# still be indexed without being crawled. The meta tag is what actually
+# guarantees it stays out of the index.
+
+User-agent: *
+Disallow: /

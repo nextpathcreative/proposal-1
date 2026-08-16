@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!--
+  index.html — NextPath Creative proposal page (static build)
+  ---------------------------------------------------------------------
+  This is the BUILD OUTPUT of a per-prospect merge. All copy is final and
+  baked in. To produce the next prospect's version, reskin in two places:
+    1. --brand below (the single color variable; whole page reskins from it)
+    2. The merge values in proposal.js (CFG block) + find/replace the
+       prospect name/city/trade in the copy below.
+  See _copy-deck.md for the canonical merge-field list.
+
+  Structure follows ClientFirst (see STYLEGUIDE.md):
+    section_[name]  →  padding-global padding-section-*  →  container-*
+  Current prospect: PDX Heating &amp; Cooling · Portland · heating and cooling
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposal for PDX Heating &amp; Cooling — NextPath Creative</title>
+  <meta name="description" content="Free to start: get found more often on Google, and turn more of those clicks into booked jobs." />
+  <!-- Private client proposal: never index. Paired with /robots.txt at the site root.
+       Keep this on every per-prospect page — an indexed proposal is publicly searchable. -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/colors_and_type.css" />
+  <link rel="stylesheet" href="assets/proposal.css?v=1" />
+  <!-- Single reskin variable: change this one hex to re-theme the whole page.
+       #1B6DB3 = the blue from the "Cooling" half of their van lettering.
+       Chosen over the teal (#008390) on their current website because the van is
+       the brand their customers actually see. Red (~#D92D27, the "Heating" half)
+       is deliberately NOT the brand color — a whole page of it reads as alarm.
+       Swap this one value to change the entire page. -->
+  <style>:root { --brand: #1B6DB3; }</style>
+</head>
+<body>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="hdr" id="hdr">
+    <div class="padding-global">
+      <div class="container-large hdr-inner">
+        <div class="brand-lock">
+          <span class="brand-mark">PDX</span>
+          <span class="brand-name">PDX Heating &amp; Cooling</span>
+          <span class="brand-chip">Proposal</span>
+        </div>
+        <div class="hdr-spacer"></div>
+        <a class="hdr-contact" href="sms:+19714195054"><i data-lucide="phone"></i><span class="hdr-contact-label">971-419-5054</span></a>
+        <button class="btn btn-primary btn-sm" data-book>Book a call</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================ 1 · HERO ============================ -->
+    <section class="section_hero" id="top">
+      <div class="padding-global padding-section-large">
+        <div class="container-large">
+          <div class="hero-grid">
+            <div class="hero-inner reveal">
+              <span class="eyebrow">A proposal for PDX Heating &amp; Cooling</span>
+              <h1 class="display hero-title">More <span class="hl"><span>booked jobs</span></span>, from the people already looking for you.</h1>
+              <p class="lede hero-lede">
+                I'll build PDX Heating &amp; Cooling a fast, mobile-first booking page, work on your Google listing so more people find you, and keep sharpening the page so more of them book — free to start. Your website stays exactly where it is. If it doesn't bring you more calls, we switch it back. No upfront cost, no contract, no risk.
+              </p>
+              <div class="hero-cta">
+                <button class="btn btn-primary btn-lg" data-book>Pick a time to walk through it <i data-lucide="arrow-right"></i></button>
+                <a class="btn btn-ghost" href="sms:+19714195054"><i data-lucide="phone"></i> Or call/text 971-419-5054</a>
+              </div>
+              <div class="hero-pillrow">
+                <span class="hero-pill"><i data-lucide="circle-dollar-sign"></i> No upfront cost</span>
+                <span class="hero-pill"><i data-lucide="globe"></i> You keep your site</span>
+                <span class="hero-pill"><i data-lucide="zap"></i> Live within two weeks</span>
+                <span class="hero-pill"><i data-lucide="undo-2"></i> Reversible anytime</span>
+              </div>
+            </div>
+            <div class="reveal hero-art-wrap" style="transition-delay:120ms;">
+              <svg class="hero-art" viewBox="0 0 450 470" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A phone showing a booking page, a Google rating, and a confirmed booking.">
+                <circle cx="250" cy="214" r="188" fill="var(--brand)" opacity="0.06"></circle>
+                <circle cx="320" cy="120" r="78" fill="var(--brand)" opacity="0.05"></circle>
+                <rect x="150" y="48" width="206" height="398" rx="32" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.4"></rect>
+                <rect x="218" y="63" width="70" height="9" rx="4.5" fill="var(--ink)"></rect>
+                <circle cx="180" cy="112" r="9" fill="var(--brand)"></circle>
+                <rect x="197" y="106" width="74" height="7" rx="3.5" fill="var(--ink)" opacity="0.85"></rect>
+                <rect x="197" y="118" width="46" height="6" rx="3" fill="var(--ink)" opacity="0.28"></rect>
+                <rect x="180" y="150" width="128" height="9" rx="4.5" fill="var(--ink)" opacity="0.8"></rect>
+                <rect x="180" y="167" width="92" height="9" rx="4.5" fill="var(--ink)" opacity="0.8"></rect>
+                <rect x="180" y="196" width="34" height="32" rx="9" fill="var(--brand)"></rect>
+                <rect x="221" y="196" width="34" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="262" y="196" width="34" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="303" y="196" width="23" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="180" y="240" width="68" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="258" y="240" width="68" height="32" rx="9" fill="var(--brand)"></rect>
+                <rect x="180" y="280" width="68" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="258" y="280" width="68" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="180" y="336" width="146" height="36" rx="10" fill="var(--ink)"></rect>
+                <rect x="223" y="351" width="60" height="7" rx="3.5" fill="var(--paper)"></rect>
+                <g>
+                  <rect x="40" y="150" width="152" height="70" rx="15" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"></rect>
+                  <path transform="translate(56, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(74, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(92, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(110, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(128, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <rect x="56" y="192" width="104" height="7" rx="3.5" fill="var(--ink)" opacity="0.26"></rect>
+                  <rect x="56" y="204" width="64" height="6" rx="3" fill="var(--ink)" opacity="0.18"></rect>
+                </g>
+                <g>
+                  <circle cx="334" cy="372" r="28" fill="var(--brand)" stroke="var(--paper)" stroke-width="4"></circle>
+                  <path d="M322 372 l8 8 l15 -17" stroke="var(--paper)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 2 · THE SHORT VERSION ============================ -->
+    <section class="section_short surface-alt divider-top">
+      <div class="padding-global padding-section-small">
+        <div class="container-large">
+          <div class="short-card reveal">
+            <div class="short-grid">
+              <div class="short-lead">
+                <span class="eyebrow">First, the short version</span>
+                <h2 class="h-lg short-heading">No catch. Here it is in plain terms.</h2>
+                <p class="short-note"><i data-lucide="pen-line"></i> A note from Simon Chen</p>
+              </div>
+              <div class="short-body prose">
+                <div class="stack-4">
+                  <p class="body">Thanks for taking my call. As promised, here's everything in writing, so you can look it over whenever it suits you and you've got my details either way.</p>
+                  <p class="body">Here's the whole offer in plain terms: I work on your Google listing so more people find you, and I build PDX Heating &amp; Cooling one focused page designed to turn those visitors into booked jobs. To start, the "website" button on your Google listing points to that page instead of your current site — so the people already finding you on Google land somewhere built to get them to call. Your existing website doesn't change at all — still live, still works, still right there when someone looks you up. Only that one button moves.</p>
+                  <p class="body">It costs you nothing to start, and I don't put a clock on it. If it brings you more work, we talk about keeping it. If it doesn't, I switch your Google link back and you've lost nothing but the minute it took to set up.</p>
+                  <p class="body">No catch. This is how I earn new clients — I'd rather prove it works than ask you to take my word for it.</p>
+                </div>
+                <div class="signoff">
+                  <span class="av">SC</span>
+                  <div class="who"><b>Simon Chen</b><span>NextPath Creative</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 3 · WHY THIS WORKS ============================ -->
+    <section class="section_why" id="why">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="why-inner">
+            <div class="reveal">
+              <div class="stack-4" style="margin-bottom:8px;">
+                <span class="eyebrow">Why this works</span>
+                <h2 class="h-lg why-heading">Two halves of the same job.</h2>
+              </div>
+            </div>
+            <div class="stack-4 reveal">
+              <p class="body why-p" style="margin-top:8px;">
+                Getting more jobs off Google comes down to two questions: how often do you come up when someone searches, and what happens when you do? Both have to work — one without the other, and the job goes to someone else.
+              </p>
+            </div>
+
+            <!-- Half one: getting found -->
+            <div class="stack-4 reveal" style="margin-top:34px;">
+              <span class="eyebrow">Half one — getting found</span>
+              <p class="body why-p" style="margin-top:10px;">
+                When someone nearby searches "AC repair near me" or "furnace repair in Portland," Google hands them a list of companies. The higher up that list you sit, the more people see you — and the more of them click through. And it's not all-or-nothing: every spot you move up puts you in front of more people than you're reaching now.
+              </p>
+            </div>
+
+            <div class="stack-4 reveal">
+              <p class="body why-p">Where you land isn't luck. It comes down to how complete and how active your listing is, whether your details match everywhere else online, and how recent your reviews are. All of it, I can work on.</p>
+              <p class="body why-p">I'll be straight with you about the goal, though. I'm not going to promise you the top three — anyone who promises that is guessing. What I can do is move you up from where you sit now and keep at it, because those spots get contested constantly and nobody holds one by sitting still.</p>
+            </div>
+
+            <!-- Half two: converting the click -->
+            <div class="stack-4 reveal" style="margin-top:40px;">
+              <span class="eyebrow">Half two — turning it into a booking</span>
+              <p class="body why-p" style="margin-top:10px;">
+                Getting the tap is the hard part. Losing it afterwards is the expensive part. Someone who taps your listing isn't browsing — they've got no heat and they're deciding who to call today.
+              </p>
+            </div>
+
+            <div style="margin-top:24px;margin-bottom:24px;">
+              <div class="reveal stat-card stat-card-wide">
+                <div class="stat-num"><span class="countup" data-count="76">76</span><span class="u">%</span></div>
+                <div>
+                  <div class="stat-desc" style="font-size:17px;">of people who search for something nearby visit a business within a day.</div>
+                  <div class="stat-src" style="margin-top:8px;"><i data-lucide="link"></i> Backlinko</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stack-4 reveal">
+              <p class="body why-p">That's why what they land on can't be a regular website built for browsing — it has to be one focused page built to convert a ready buyer: give them what they came for, and one easy way to book. That's what I build you.</p>
+            </div>
+
+            <div class="stack-4 reveal">
+              <p class="body why-p">So what makes them pick you over the next name on the list? Your reviews are a big part of it.</p>
+            </div>
+
+            <div class="stat-grid stat-grid-2" style="margin-top:24px;margin-bottom:28px;">
+              <div class="reveal stat-card">
+                <div class="stat-num"><span class="countup" data-count="97">97</span><span class="u">%</span></div>
+                <div class="stat-desc">of people read online reviews before hiring a local business.</div>
+                <div class="stat-src"><i data-lucide="link"></i> BrightLocal</div>
+              </div>
+              <div class="reveal stat-card">
+                <div class="stat-num"><span class="countup" data-count="73">73</span><span class="u">%</span></div>
+                <div class="stat-desc">say how <i>recent</i> your reviews are is a major factor in who they hire.</div>
+                <div class="stat-src"><i data-lucide="link"></i> BrightLocal</div>
+              </div>
+            </div>
+
+            <div class="stack-4 reveal">
+              <p class="body why-p">That last one matters more than people expect. Reviews aren't a trophy you win once — a wall of five stars from a few years back counts for less than a handful from last month.</p>
+            </div>
+
+            <div style="margin-top:24px;margin-bottom:24px;">
+              <div class="reveal stat-card stat-card-wide">
+                <div class="stat-num"><span class="stat-pre">About </span><span class="countup" data-count="28">28</span><span class="u">%</span></div>
+                <div>
+                  <div class="stat-desc" style="font-size:17px;">of those nearby searches end in someone getting hired.</div>
+                  <div class="stat-src" style="margin-top:8px;"><i data-lucide="link"></i> Think with Google</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stack-4 reveal">
+              <p class="body why-p">When someone ready to hire lands on a page that doesn't give them what they came for or clear their doubts, they never pull the trigger.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 4 · WHAT YOU'RE GETTING ============================ -->
+    <section class="section_what surface-alt divider-top" id="what">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <div class="feat-grid">
+            <div class="what_content-left">
+              <div class="reveal">
+                <div class="stack-4" style="margin-bottom:8px;">
+                  <span class="eyebrow">What you're getting · part one</span>
+                  <h2 class="h-lg">A page with one job — getting you the call.</h2>
+                </div>
+                <p class="body" style="margin-top:18px;">
+                  It's not a website with menus to wander through. It's a single page that answers every question a customer has, fast, and gives them one easy way to act. On it:
+                </p>
+              </div>
+              <div class="feat-list reveal" style="margin-top:18px;">
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="calendar-check"></i></div>
+                  <div class="feat-body"><b>A scheduler showing your real availability</b><span>synced to your calendar, so nobody can book a slot you're already on a job for.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="message-square-check"></i></div>
+                  <div class="feat-body"><b>You approve every booking before it's confirmed</b><span>the moment someone books, you get an email with their details. You accept or decline — or just call them yourself. Nothing goes on your calendar without your say-so.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="shield-check"></i></div>
+                  <div class="feat-body"><b>Your 21 reviews, both license numbers, and your Amana dealer status up front</b><span>CCB #216878 and your Washington license — right where a stranger decides whether to trust you.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="image"></i></div>
+                  <div class="feat-body"><b>Real photos</b><span>of you, your van, and your actual work — not stock photos of someone else's furnace.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="phone"></i></div>
+                  <div class="feat-body"><b>A tappable phone number on every screen</b><span>and it'll be the right one, on every page and every listing.</span></div>
+                </div>
+              </div>
+              <div class="reveal">
+                <p class="body" style="margin-top:22px;">
+                  Everything on the page points at one thing: booking you. Nothing on it sends them somewhere else.
+                </p>
+              </div>
+            </div>
+
+            <div class="reveal">
+              <div class="phone-wrap">
+                <div class="phone">
+                  <div class="phone-pill"></div>
+                  <span class="phone-badge"><i></i> Live</span>
+                  <div class="phone-screen">
+                    <iframe src="demo/sample.html?b=hvac" title="Live sample landing page" loading="lazy"></iframe>
+                  </div>
+                </div>
+                <p class="phone-cap"><b>Here's the kind of page I build.</b> Scroll it, tap the scheduler — it really works.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Part two: the listing. Deliberately described at the level of
+               OUTCOMES and CADENCE, not method. What gets done and how often,
+               not how it's done — the how is the service. -->
+          <div class="reveal" style="margin-top:56px;">
+            <div class="stack-4" style="margin-bottom:8px;">
+              <span class="eyebrow">What you're getting · part two</span>
+              <h2 class="h-lg">Your Google listing, actively managed.</h2>
+            </div>
+            <p class="body" style="margin-top:18px;max-width:64ch;">
+              This is the half most people skip, and it's the half that decides whether anyone reaches the page at all. I take the listing over and run it properly.
+            </p>
+          </div>
+          <div class="what_listing_component reveal" style="margin-top:24px;">
+            <div class="feat">
+              <div class="feat-ic"><i data-lucide="badge-check"></i></div>
+              <div class="feat-body"><b>Claimed and verified in your name</b><span>you're the owner — I'm added as a manager. You can remove me in two taps, any time, and keep everything.</span></div>
+            </div>
+            <div class="feat">
+              <div class="feat-ic"><i data-lucide="list-checks"></i></div>
+              <div class="feat-body"><b>Every field filled out properly</b><span>categories, services, service areas, hours, description. Google favours listings that are complete.</span></div>
+            </div>
+            <div class="feat">
+              <div class="feat-ic"><i data-lucide="map-pin"></i></div>
+              <div class="feat-body"><b>Your details made consistent everywhere</b><span>Google, Yelp, Facebook and the directories that feed them — same name, same address, same phone number. Google currently shows a 208 number while your van and your website both show 503; that one gets straightened out first.</span></div>
+            </div>
+            <div class="feat">
+              <div class="feat-ic"><i data-lucide="camera"></i></div>
+              <div class="feat-body"><b>Posts and photos going up regularly</b><span>an active listing outranks a dormant one.</span></div>
+            </div>
+            <div class="feat">
+              <div class="feat-ic"><i data-lucide="star"></i></div>
+              <div class="feat-body"><b>Every review answered, and more of them coming in</b><span>including a simple way to ask happy customers — because how recent your reviews are counts as much as how many.</span></div>
+            </div>
+            <div class="feat">
+              <div class="feat-ic"><i data-lucide="radar"></i></div>
+              <div class="feat-body"><b>Watched against the competition — and how search shifts</b><span>I track where you rank and how people are searching — AI's changing that fast — and keep you a step ahead of it.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 5 · HOW THIS WORKS ============================ -->
+    <section class="section_how" id="how">
+      <div class="padding-global padding-section-medium">
+        <div class="container-small">
+          <div class="reveal">
+            <div class="stack-4" style="margin-bottom:8px;">
+              <span class="eyebrow">How this works</span>
+              <h2 class="h-lg">You stay in control of all of it.</h2>
+            </div>
+          </div>
+          <div class="steps reveal" style="margin-top:30px;">
+            <div class="step is-key">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <b>We claim your listing — together.</b>
+                <p>It's your business, so it has to be you who claims it. I walk you through it on a call; it takes about ten minutes, and then Google mails a postcard or does a quick video check to confirm you're real. Once it's yours, you add me as a manager.</p>
+                <span class="step-tag"><i data-lucide="key-round"></i> You're the owner — always</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <b>I get everything set up right and build the page.</b>
+                <p>Phone number corrected everywhere, listing filled out properly, and a page built around your brand — your van's colors, your reviews, your licenses. Ready within two weeks.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <b>We point your Google link at the new page.</b>
+                <p>The "website" button on your listing points to it instead of your current site. Your existing website stays live and untouched at its own address — I even link to it from the new page. This takes a minute, and it can be undone just as fast.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <b>I keep working on it.</b>
+                <p>Posts, photos, review responses, and adjustments as things move. This is the part that isn't set-and-forget — see the next section for why.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <b>We look at the numbers together.</b>
+                <p>At 30 days we go through exactly how many people landed on the page, how many called, and how many booked — whether it's going well or not. That's a check-in, not a deadline. Nothing starts costing you money because a date passed.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="card" style="margin-top:8px;display:flex;gap:14px;align-items:center;background:var(--surface-alt);">
+              <div class="feat-ic" style="background:var(--brand-tint);"><i data-lucide="lock-open"></i></div>
+              <p class="body" style="margin:0;">At no point are you locked in, and at no point does your existing site go away.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 6 · WHY THIS ISN'T ONE-AND-DONE ============================
+         The retention argument. This section exists to establish that ranking is
+         a position you defend, not a milestone you hit — which is what justifies
+         an ongoing relationship rather than a one-off build.
+         NOTE ON TONE: describes WHAT moves and HOW OFTEN it's watched. It never
+         describes the method. The method is the service.
+    ============================================================================================ -->
+    <section class="section_ongoing surface-alt divider-top" id="ongoing">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="reveal">
+            <div class="stack-4" style="margin-bottom:8px;">
+              <span class="eyebrow">The part nobody mentions</span>
+              <h2 class="h-lg">Ranking isn't something you win once.</h2>
+            </div>
+            <p class="body" style="margin-top:18px;max-width:64ch;">
+              This is the thing I want to be straight with you about, because it's the difference between money well spent and money wasted. Anyone who offers you a one-time cleanup and walks away is selling you something that stops working. Four things are always moving underneath you:
+            </p>
+          </div>
+
+          <div class="ongoing_component reveal">
+            <div class="ongoing_card">
+              <b>The other companies aren't standing still</b>
+              <p>Every heating and cooling business near you wants the same three spots. The ones actively working on it climb. The ones who fixed things once and stopped quietly slide down — usually without noticing until the phone gets quiet.</p>
+            </div>
+            <div class="ongoing_card">
+              <b>Google keeps changing what it rewards</b>
+              <p>What put a listing on top two years ago isn't what does it today. Nobody sends out a memo when it changes. You find out by watching the results and reacting.</p>
+            </div>
+            <div class="ongoing_card">
+              <b>How people search keeps changing</b>
+              <p>The way people look for you doesn't hold still — AI especially is changing how they search. What puts you in front of them today won't be what does it next year.</p>
+            </div>
+            <div class="ongoing_card">
+              <b>Your reviews get old</b>
+              <p>Nearly three quarters of people weigh how <i>recent</i> your reviews are. Your 21 are an asset — but a five-star review from 2021 carries less than one from last month. It needs feeding.</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <p class="body" style="margin-top:26px;max-width:64ch;">
+              So the job isn't "fix the listing." The job is keeping an ear to the ground — watching what shifted, what the companies around you changed, and how people are finding you — and adjusting before you lose ground. That's what I do, week to week, for as long as you want me on it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 7 · HOW YOU'LL KNOW IT WORKED ============================
+         Answers the hardest objection to any lead-gen claim: "prove it was you."
+         Backed by the real call/booking tracking already built into the platform.
+    ========================================================================================= -->
+    <section class="section_proof" id="proof">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="reveal">
+            <div class="stack-4" style="margin-bottom:8px;">
+              <span class="eyebrow">No guessing</span>
+              <h2 class="h-lg">You'll see the numbers, not my opinion of them.</h2>
+            </div>
+            <p class="body" style="margin-top:18px;max-width:64ch;">
+              The reason this kind of work has a bad name is that most of it happens out of sight and you're asked to take it on faith. You won't have to. The page counts what happens on it, and you get a plain readout:
+            </p>
+          </div>
+
+          <div class="proof_component reveal">
+            <div class="proof_metric">
+              <i data-lucide="users"></i>
+              <div><b>How many people landed on your page</b><span>and whether that number is going up.</span></div>
+            </div>
+            <div class="proof_metric">
+              <i data-lucide="phone-call"></i>
+              <div><b>How many tapped to call you</b><span>the ones who'd rather talk than book online.</span></div>
+            </div>
+            <div class="proof_metric">
+              <i data-lucide="calendar-check"></i>
+              <div><b>How many booked, and what for</b><span>so you can see which jobs the page is actually bringing in.</span></div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <p class="body" style="margin-top:26px;max-width:64ch;">
+              And if it isn't working, you'll see that just as clearly. I'd rather you know than take my word for it — which is the whole reason you're not paying for any of this yet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 8 · THE TERMS ============================ -->
+    <section class="section_terms surface-alt divider-top" id="terms">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="reveal">
+            <div class="stack-4 center" style="max-width:34ch;margin-left:auto;margin-right:auto;margin-bottom:8px;">
+              <span class="eyebrow" style="justify-content:center;">The terms, in writing</span>
+              <h2 class="h-lg">What it costs to find out: nothing.</h2>
+            </div>
+          </div>
+          <div class="terms-grid reveal" style="margin-top:36px;max-width:880px;margin-left:auto;margin-right:auto;">
+            <div class="terms-card">
+              <h3>What you get</h3>
+              <div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>Your Google listing claimed, corrected, and filled out properly</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>Your phone number and details fixed everywhere they're currently wrong</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>A landing page built around your brand, with the scheduler live</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>Posts, review responses and monitoring, for as long as it stays free</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>Your existing website left exactly as it is</span></div>
+              </div>
+            </div>
+            <div class="terms-card cost">
+              <h3>What it costs</h3>
+              <div class="price-big"><span class="n">$0</span><span class="l">to start</span></div>
+              <div style="margin-top:8px;">
+                <div class="terms-li"><i data-lucide="check"></i> <span>No contract, no card, nothing to cancel</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span><b>It stays free until you can see it's bringing you work.</b> When it is, we'll talk about a fair monthly rate — your call, no pressure.</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>If it never does, you never pay me anything. I hand it all back and we shake hands — <b>you keep the claimed listing, the corrections, and every review that came in.</b></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 9 · TIMELINE ============================ -->
+    <section class="section_timeline" id="timeline">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="reveal">
+            <div class="stack-4 center" style="max-width:34ch;margin-left:auto;margin-right:auto;margin-bottom:8px;">
+              <span class="eyebrow" style="justify-content:center;">Timeline</span>
+              <h2 class="h-lg">From "yes" to live in about two weeks.</h2>
+            </div>
+          </div>
+          <div class="timeline reveal" style="margin-top:36px;">
+            <div class="tl-card">
+              <div class="tl-when"><span class="num">1</span> Day one</div>
+              <b>You say go.</b>
+              <p>A short call to claim your listing together, then a few photos, your logo, and access to the accounts I'll tidy up — Google, Facebook, Yelp, your domain. I make that part easy.</p>
+            </div>
+            <div class="tl-card">
+              <div class="tl-when"><span class="num">2</span> The next week or two</div>
+              <b>I build the page.</b>
+              <p>Built around your brand and sent to you to review. Meanwhile Google confirms your listing in the background — that part is on their clock, usually a few days.</p>
+            </div>
+            <div class="tl-card">
+              <div class="tl-when"><span class="num">3</span> Go-live</div>
+              <b>We begin.</b>
+              <p>Once you're happy with the page, we point your Google link over and I start managing the listing.</p>
+            </div>
+          </div>
+          <div class="reveal">
+            <p class="small" style="margin-top:20px;text-align:center;color:var(--fg-muted);">
+              The page is up and working within two weeks either way. Only the listing side waits on Google.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 10 · WHO YOU'D BE WORKING WITH ============================ -->
+    <section class="section_who surface-alt divider-top" id="who">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <div class="who_component">
+        <div class="bio-grid">
+          
+            <div class="reveal">
+              <div class="bio-card-portrait">
+                <img src="assets/simon.webp" alt="Simon Chen — NextPath Creative" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;">
+              </div>
+            </div>
+            <div class="reveal">
+              <span class="eyebrow">Who you'd be working with</span>
+              <h2 class="h-lg" style="margin-top:14px;">Simon, from NextPath Creative.</h2>
+              <div class="stack-4" style="margin-top:18px;">
+                <p class="body">I do this for heating and cooling businesses around Portland, one at a time. Not an agency with a call center — when you text that number, you get me. I'd rather build something that pays for itself than talk anyone into a contract they regret.</p>
+                <p class="body">The bigger outfits aren't winning because they're better. They're winning because they spend more on being seen. When they send someone out, it's a tech on a schedule who didn't pick your job. When you show up, it's your name on the van and your reviews on the line. That difference is real — it's just invisible online right now, and that's the part I'd like to change.</p>
+                <p class="body" style="display:none;">And you don't have to take my word for any of it. Here's a live page you can try yourself — tap through it like a customer would, and book a test visit to feel how the whole thing works.</p>
+              </div>
+            </div>
+          </div>
+  <div class="reveal" style="margin-top:48px;display:none;">
+            <div class="row" style="justify-content:space-between;align-items:flex-end;margin-bottom:18px;">
+              <div>
+                <span class="eyebrow">Try one yourself</span>
+                <h3 class="h-md" style="margin-top:12px;">Real sample pages. Tap in and play with the scheduler.</h3>
+              </div>
+            </div>
+            <div class="gallery">
+              <a class="demo-card" href="demo/sample.html?b=hvac" target="_blank" rel="noopener">
+                <div class="demo-chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="url">cascadeheatingair.com</div>
+                </div>
+                <div class="demo-thumb">
+                  <img src="screenshots/demo-hvac.png" alt="Cascade Heating &amp; Air sample landing page" loading="lazy" />
+                  <div class="demo-play"><span><i data-lucide="mouse-pointer-click"></i> Open live demo</span></div>
+                </div>
+                <div class="demo-meta">
+                  <div><b>Cascade Heating &amp; Air</b><span>Heating &amp; Air · sample</span></div>
+                  <span class="demo-live"><i></i> Live</span>
+                </div>
+              </a>
+              <a class="demo-card" href="demo/sample.html?b=plumbing" target="_blank" rel="noopener">
+                <div class="demo-chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="url">rosecityplumbing.com</div>
+                </div>
+                <div class="demo-thumb">
+                  <img src="screenshots/demo-plumbing.png" alt="Rose City Plumbing sample landing page" loading="lazy" />
+                  <div class="demo-play"><span><i data-lucide="mouse-pointer-click"></i> Open live demo</span></div>
+                </div>
+                <div class="demo-meta">
+                  <div><b>Rose City Plumbing</b><span>Plumbing · sample</span></div>
+                  <span class="demo-live"><i></i> Live</span>
+                </div>
+              </a>
+              <a class="demo-card" href="demo/sample.html?b=electrical" target="_blank" rel="noopener">
+                <div class="demo-chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="url">bridgetownelectric.com</div>
+                </div>
+                <div class="demo-thumb">
+                  <img src="screenshots/demo-electrical.png" alt="Bridgetown Electric sample landing page" loading="lazy" />
+                  <div class="demo-play"><span><i data-lucide="mouse-pointer-click"></i> Open live demo</span></div>
+                </div>
+                <div class="demo-meta">
+                  <div><b>Bridgetown Electric</b><span>Electrical · sample</span></div>
+                  <span class="demo-live"><i></i> Live</span>
+                </div>
+              </a>
+            </div>
+            <div style="margin-top:24px;">
+              <a class="btn btn-primary btn-lg" href="demo/sample.html?b=hvac" target="_blank" rel="noopener">See a live example <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </div>
+
+            </div>
+          </div>
+
+
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 11 · STRAIGHT ANSWERS (FAQ) ============================ -->
+    <section class="section_faq" id="faq">
+      <div class="padding-global padding-section-medium">
+        <div class="container-small">
+          <div class="reveal">
+            <div class="stack-4" style="max-width:34ch;margin-bottom:8px;">
+              <span class="eyebrow">Straight answers</span>
+              <h2 class="h-lg">The questions you're probably already asking.</h2>
+            </div>
+          </div>
+          <div class="faq reveal" style="margin-top:24px;">
+            <div class="faq-item open">
+              <button class="faq-q" aria-expanded="true">
+                <span>Do I lose my current website?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">No. It stays live, untouched, at its own address the whole time. The only change is which page your Google listing points to — and that flips back in seconds.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Do you need access to my Google account?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">You claim the listing in your own name and you stay the owner. You then add me as a <b>manager</b>, which lets me post, reply to reviews, and correct your details. I never have your password, and you can remove my access in two taps whenever you want.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What happens to my Google Business Profile if we stop working together?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">It's yours. You claimed it, you own it, and everything I fixed stays fixed — the right phone number, the filled-out profile, and every review that came in while I was on it. I just lose access. Nothing gets taken back.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Do I own the page you build?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">The page is the piece I build and run for you as part of the service, so no — that one's mine. But everything that's actually yours stays yours: your domain, your existing website, and your Google listing with every fix and review I add. If we ever part ways, the page comes down and your Google link points right back to your own site. You keep everything you came in with, plus everything I improved — nothing held hostage.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What does "managing my listing" actually involve?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Keeping it complete, active, and accurate. Posts and photos going up, every review answered, your details matching everywhere they appear, and adjustments when Google or the companies around you move. Some weeks that's small tweaks. Some weeks there's real work in it. Either way it's steady, not one-and-done.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Is my Google listing safe?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Safer than it is now, honestly — an unclaimed listing is the kind a stranger can suggest edits to. Nothing I do touches your reviews or your rating, and I won't change how you're described without running it past you first.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What if it doesn't bring in any work?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Then I point your Google link back at your old site and we part as friends. You keep the claimed listing and every correction. You're out nothing but the few minutes it took to set up.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What does it actually cost?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Nothing to start — no card, no contract, nothing to cancel. It stays free until you can see it's bringing you work. When it is, we'll sit down and agree on a fair monthly rate, and you can say no. If it never brings you work, you never pay me anything.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Why would you do this for free?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Same reason I told you on the phone: I want to know this actually brings in work before I charge anyone for it. I'd rather have one business I can point to and say "look what it did" than a handful of clients who aren't sure it did anything. That's worth more to me right now than your monthly payment.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Am I locked into a contract?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">No — not to start, and not later. If you decide to continue, it's month to month.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 12 · FINAL CTA ============================ -->
+    <section class="section_final surface-ink" id="final">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium finalcta">
+          <div class="reveal">
+            <span class="eyebrow" style="justify-content:center;">Next step</span>
+            <h2 class="h-xl" style="margin-top:16px;color:#fff;">Sound good? Let's talk.</h2>
+            <p class="lede">Pick a time and I'll walk you through it, show you the page, and answer anything I didn't cover here. Half an hour, no pitch, no pressure. If it's not for you, that's a perfectly fine answer.</p>
+            <div class="finalcta-actions">
+              <button class="btn btn-brand btn-lg" data-book><i data-lucide="calendar-check"></i> Pick a time to walk through it</button>
+              <p class="finalcta-sub"><span>Or just <a href="mailto:SimonC@NextPathCreativeLLC.com">reply to my email</a>.</span><span>Or call/text me at <a href="sms:+19714195054">971-419-5054</a>.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ 13 · FOOTER ============================ -->
+  <footer class="foot">
+    <div class="padding-global">
+      <div class="container-large foot-inner">
+        <div class="foot-top">
+          <div class="foot-brand">
+            <span class="brand-mark" style="background:#fff;color:var(--ink);">N</span>
+            <span style="font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.02em;color:#fff;">NextPath Creative</span>
+          </div>
+          <div class="foot-contact">
+            <span>Simon</span>
+            <a href="sms:+19714195054">971-419-5054</a>
+            <a href="mailto:SimonC@NextPathCreativeLLC.com">SimonC@NextPathCreativeLLC.com</a>
+          </div>
+        </div>
+        <div class="foot-fine">
+          Prepared for PDX Heating &amp; Cooling. Your current website stays live at its own address the whole time.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ STICKY CALL BAR (mobile) ============================ -->
+  <div class="callbar">
+    <div class="txt"><b>Book a 30-minute walk-through</b><span>No pitch · no pressure · Simon from NextPath Creative</span></div>
+    <a class="cta" href="#" data-book><i data-lucide="calendar-check"></i> Book</a>
+  </div>
+
+  <!-- ============================ BOOKING MODAL (built by JS) ============================ -->
+  <div id="modal-root"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="proposal.js"></script>
+</body>
+</html>
