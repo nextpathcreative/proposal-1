@@ -194,18 +194,11 @@
                 <div class="phone-pill"></div>
                 <span class="phone-badge"><i></i> Live</span>
                 <div class="phone-screen">
+                  <!-- Static preview on mobile (iframe pointer-events:none via CSS); interactive on desktop. -->
                   <iframe src="demo/sample.html?b=plumbing" title="Live sample landing page" loading="lazy"></iframe>
-                  <!-- Mobile only (see .phone-activate/.phone-done in CSS + initPhoneActivate in JS):
-                       the iframe is inert by default so the page scrolls through it (no scroll-trap).
-                       "Tap to explore" turns on inline scrolling; "Done" (or a tap off the phone)
-                       turns it back off. Both are hidden on desktop, where the iframe is interactive. -->
-                  <button class="phone-activate" type="button" aria-label="Tap to explore the sample page">
-                    <span><i data-lucide="chevrons-up-down"></i> Tap to explore</span>
-                  </button>
-                  <button class="phone-done" type="button" aria-label="Stop exploring"><i data-lucide="x"></i> Done</button>
                 </div>
               </div>
-              <p class="phone-cap"><b>This is the actual page.</b> Tap the scheduler — it really works.</p>
+              <p class="phone-cap"><b>This is the actual page.</b></p>
             </div>
           </div>
         </div>

@@ -500,44 +500,16 @@ strong, b { font-weight: 700; color: var(--ink); }
 .phone-badge i { width: 7px; height: 7px; border-radius: 50%; background: #34D27B; display: block; box-shadow: 0 0 0 3px rgba(52,210,123,0.3); }
 .phone-cap { text-align: center; font-size: 13.5px; color: var(--fg-muted); max-width: 30ch; }
 .phone-cap b { color: var(--ink); font-weight: 650; }
-/* Tap-to-explore controls — desktop keeps the iframe interactive, so both are hidden. */
-.phone-activate, .phone-done { display: none; }
+/* Mobile: the phone is a static, non-interactive preview — the page scrolls
+   straight past it (the iframe ignores touch). Desktop keeps the iframe
+   interactive (a mouse scrolls it fine) and gets a larger frame where there's
+   room. */
 @media (max-width: 760px) {
-  /* Inert by default: the iframe ignores touch, so the page scrolls straight
-     through the phone (no scroll-trap). Tapping "explore" turns interaction on. */
   .phone-screen iframe { pointer-events: none; }
-
-  /* Full-cover tap target with a hint pill. A drag scrolls the page; a tap wakes
-     the phone. (It's a button, so it never traps scrolling on its own.) */
-  .phone-activate {
-    display: flex; position: absolute; inset: 0; z-index: 5;
-    align-items: flex-end; justify-content: center; padding-bottom: 20px;
-    border: 0; background: transparent; cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  /* Shared pill look for the hint and the Done control (display set separately). */
-  .phone-activate span, .phone-done {
-    align-items: center; gap: 6px; color: #fff; font-weight: 700; border-radius: 999px;
-    background: color-mix(in oklab, var(--ink), transparent 6%);
-    box-shadow: var(--shadow-card); backdrop-filter: blur(4px);
-  }
-  .phone-activate span { display: inline-flex; font-size: 12.5px; padding: 8px 15px; }
-  .phone-activate span i { width: 14px; height: 14px; }
-
-  /* Active: the phone box itself becomes the scroller. iOS Safari won't scroll
-     an iframe internally, so instead we scroll the box and size the iframe to
-     its full content height in JS (initPhoneActivate). The iframe stays
-     pointer-events:none, so the finger drives the box's scroll. Hint hidden,
-     "Done" shown. */
-  .phone-screen.is-active { overflow-y: auto; -webkit-overflow-scrolling: touch; }
-  .phone-screen.is-active .phone-activate { display: none; }
-  .phone-screen.is-active .phone-done { display: inline-flex; }
-  .phone-done {
-    position: absolute; z-index: 6; top: 12px; left: 12px;
-    font-size: 12px; padding: 7px 12px; border: 0; cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .phone-done i { width: 13px; height: 13px; }
+}
+@media (min-width: 761px) {
+  .phone { width: 440px; }
+  .phone-screen { height: 756px; }
 }
 
 /* ----------------------------- Steps (how it works) ----------------------------- */

@@ -288,18 +288,11 @@
                   <div class="phone-pill"></div>
                   <span class="phone-badge"><i></i> Live</span>
                   <div class="phone-screen">
+                    <!-- Static preview on mobile (iframe pointer-events:none via CSS); interactive on desktop. -->
                     <iframe src="demo/sample.html?b=hvac" title="Live sample landing page" loading="lazy"></iframe>
-                    <!-- Mobile only (see .phone-activate/.phone-done in CSS + initPhoneActivate in JS):
-                         the iframe is inert by default so the page scrolls through it (no scroll-trap).
-                         "Tap to explore" turns on inline scrolling; "Done" (or a tap off the phone)
-                         turns it back off. Both are hidden on desktop, where the iframe is interactive. -->
-                    <button class="phone-activate" type="button" aria-label="Tap to explore the sample page">
-                      <span><i data-lucide="chevrons-up-down"></i> Tap to explore</span>
-                    </button>
-                    <button class="phone-done" type="button" aria-label="Stop exploring"><i data-lucide="x"></i> Done</button>
                   </div>
                 </div>
-                <p class="phone-cap"><b>Here's the kind of page I build.</b> Tap the scheduler — it really works.</p>
+                <p class="phone-cap"><b>Here's the kind of page I build.</b></p>
               </div>
             </div>
           </div>
@@ -686,7 +679,7 @@
                 <span class="faq-ic"><i data-lucide="plus"></i></span>
               </button>
               <div class="faq-a">
-                <div class="faq-a-inner">It's yours — you claimed it, you own it. Everything on it stays: the corrected phone number, the filled-out profile, every review that came in, and wherever you've climbed to. What you lose is the edge I bring on top of that — the ongoing work that keeps you moving up and keeps you a step ahead as search changes. Nothing gets taken back; you just stop getting the part that keeps pushing it forward.</div>
+                <div class="faq-a-inner">It's yours — you claimed it, you own it. Everything on it stays: the corrected phone number, the filled-out profile, every review that came in, and wherever you've climbed to. What you lose is the edge I bring to your listing.</div>
               </div>
             </div>
             <div class="faq-item">
