@@ -484,6 +484,27 @@ strong, b { font-weight: 700; color: var(--ink); }
 .phone-badge i { width: 7px; height: 7px; border-radius: 50%; background: #34D27B; display: block; box-shadow: 0 0 0 3px rgba(52,210,123,0.3); }
 .phone-cap { text-align: center; font-size: 13.5px; color: var(--fg-muted); max-width: 30ch; }
 .phone-cap b { color: var(--ink); font-weight: 650; }
+/* Tap-to-open overlay — desktop keeps the interactive iframe, so it's hidden here. */
+.phone-open { display: none; }
+@media (max-width: 760px) {
+  /* Kill the scroll-trap: the iframe no longer eats touch, so the page scrolls
+     straight through the phone. The overlay link below is what stays tappable. */
+  .phone-screen iframe { pointer-events: none; }
+  /* Full-cover tap target. As a link, a drag over it scrolls the page while a
+     tap opens the real sample full-screen — no cramped in-frame scrolling. */
+  .phone-open {
+    display: flex; position: absolute; inset: 0; z-index: 5;
+    align-items: flex-end; justify-content: center;
+    padding-bottom: 20px; text-decoration: none;
+  }
+  .phone-open span {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: color-mix(in oklab, var(--ink), transparent 6%); color: #fff;
+    font-size: 12.5px; font-weight: 700; padding: 8px 15px; border-radius: 999px;
+    box-shadow: var(--shadow-card); backdrop-filter: blur(4px);
+  }
+  .phone-open span i { width: 14px; height: 14px; }
+}
 
 /* ----------------------------- Steps (how it works) ----------------------------- */
 .steps { display: flex; flex-direction: column; gap: 0; counter-reset: step; }
