@@ -17,7 +17,11 @@
     MY_NAME:     "Simon",
     MY_FULLNAME: "Simon Chen",
     MY_PHONE:    "971-419-5054",
-    MY_SMS_HREF: "sms:+19714195054"
+    MY_SMS_HREF: "sms:+19714195054",
+    // Web3Forms public access key — emails each booking to simonchenpdx@gmail.com.
+    // Same key is reused across every prospect proposal; the "proposal" field
+    // below tells you which one a booking came from.
+    FORM_KEY:    "4f4d72eb-936f-4fb0-b26a-09330c0a9fb0"
   };
 
   /* ------------------------------ Icons ------------------------------ */
@@ -155,7 +159,9 @@
   }
 
   /* --------------------------- Booking modal -------------------------- */
-  var SLOTS = ["9:00", "9:30", "10:30", "11:30", "1:00", "2:00", "3:30", "4:30"];
+  // Bookable window: 11:00am – 6:30pm, 30-minute steps (12-hour, no meridiem).
+  var SLOTS = ["11:00", "11:30", "12:00", "12:30", "1:00", "1:30", "2:00", "2:30",
+               "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30"];
 
   function buildDays() {
     var out = [], c = new Date();
@@ -189,7 +195,7 @@
   function esc(s) { return (s || "").replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
 
   var DAYS = buildDays();
-  var state = { open: false, step: 1, dayIdx: 0, slot: null, form: { name: "", phone: "", biz: "" } };
+  var state = { open: false, step: 1, dayIdx: 0, slot: null, sending: false, form: { name: "", phone: "", biz: "" } };
   var root = document.getElementById("modal-root");
 
   function schedulerHTML() {
@@ -235,7 +241,7 @@
       var first = state.form.name ? ", " + esc(state.form.name.split(" ")[0]) : "";
       s += '<div class="sched-done">' +
         '<div class="sched-check"><i data-lucide="check"></i></div>' +
-        '<div class="sched-done-title">You\'re on my calendar.</div>' +
+        '<div class="sched-done-title">Got it — I\'ll be in touch.</div>' +
         '<p class="small body-muted" style="max-width:30ch;">I\'ll text to confirm shortly. Talk soon' + first + '.</p>' +
         '<div class="sched-receipt">' +
         '<div class="r"><span>When</span><b>' + fullDay(day) + ', ' + dateLabel(day) + ' · ' + state.slot + ' PT</b></div>' +
@@ -247,6 +253,32 @@
         '</div>';
     }
     return '<div class="sched sched--modal">' + s + '</div>';
+  }
+
+  /* Sends the booking to Web3Forms, which emails it to me.
+     `done(true)` on success, `done(false)` on any failure. */
+  function submitBooking(done) {
+    var day = DAYS[state.dayIdx];
+    var payload = {
+      access_key:  CFG.FORM_KEY,
+      subject:     "New call booking — " + CFG.CLIENT + " (" + state.form.name + ")",
+      from_name:   CFG.MY_BUSINESS + " proposal",
+      // Booking details — these become the email body:
+      name:        state.form.name,
+      phone:       state.form.phone,
+      business:    state.form.biz || "—",
+      requested:   fullDay(day) + ", " + dateLabel(day) + " at " + state.slot + " PT",
+      proposal:    CFG.CLIENT,      // which prospect page this came from
+      page:        location.href
+    };
+    fetch("https://api.web3forms.com/submit", {
+      method:  "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body:    JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) { done(!!(data && data.success)); })
+      .catch(function () { done(false); });
   }
 
   function render() {
@@ -288,7 +320,28 @@
       });
       var back = root.querySelector("[data-back]");
       if (back) back.addEventListener("click", function () { state.step = 1; render(); });
-      if (confirm) confirm.addEventListener("click", function () { if (state.form.name && state.form.phone) { state.step = 3; render(); } });
+      if (confirm) confirm.addEventListener("click", function () {
+        if (!(state.form.name && state.form.phone) || state.sending) return;
+        state.sending = true;
+        confirm.disabled = true;
+        confirm.innerHTML = "Booking…";
+        submitBooking(function (ok) {
+          state.sending = false;
+          if (ok) { state.step = 3; render(); return; }
+          // Send failed — re-enable and surface a call-me fallback so no lead is lost.
+          confirm.disabled = false;
+          confirm.innerHTML = 'Try again <i data-lucide="arrow-right"></i>';
+          icons();
+          var foot = confirm.parentNode;
+          if (foot && !foot.querySelector(".sched-err")) {
+            var er = document.createElement("div");
+            er.className = "sched-fine sched-err";
+            er.style.color = "#b91c1c";
+            er.innerHTML = "<span>Couldn’t send just now — call or text " + esc(CFG.MY_PHONE) + " and I’ll lock it in.</span>";
+            foot.appendChild(er);
+          }
+        });
+      });
     } else {
       var restart = root.querySelector("[data-restart]");
       if (restart) restart.addEventListener("click", function () {
