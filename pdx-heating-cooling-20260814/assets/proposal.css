@@ -106,6 +106,14 @@ strong, b { font-weight: 700; color: var(--ink); }
   content: ""; width: 18px; height: 1.5px; background: var(--brand-pop);
   display: inline-block; border-radius: 2px;
 }
+/* .is-pill — prominent filled variant, used only on the hero "A proposal for…"
+   label. Brand fill + white text; the leading dash is dropped for the pill. */
+.eyebrow.is-pill {
+  background: var(--brand); color: #fff;
+  padding: 6px 12px; border-radius: 999px;
+  letter-spacing: 0.12em;
+}
+.eyebrow.is-pill::before { display: none; }
 
 /* ----------------------------- Layout (ClientFirst) -----------------------------
    Structure per section:
@@ -184,6 +192,14 @@ strong, b { font-weight: 700; color: var(--ink); }
 @media (max-width: 760px) {
   .hdr-contact { display: none; }
   .brand-chip { display: none; }
+}
+/* Small phones: shrink the brand lock so the name can't collide with the
+   Book-a-call button. brand-lock truncates gracefully as a last resort. */
+@media (max-width: 500px) {
+  .hdr-inner { gap: 10px; }
+  .brand-lock { gap: 8px; overflow: hidden; }
+  .brand-mark { width: 30px; height: 30px; font-size: 15px; }
+  .brand-name { font-size: 15px; overflow: hidden; text-overflow: ellipsis; }
 }
 
 /* ----------------------------- Buttons ----------------------------- */
