@@ -18,7 +18,7 @@
     MY_FULLNAME: "Simon Chen",
     MY_PHONE:    "971-419-5054",
     MY_SMS_HREF: "sms:+19714195054",
-    // Web3Forms public access key — emails each booking to nextpathcreative@gmail.com.
+    // Web3Forms public access key — emails each booking to nextpathcreativellc@gmail.com.
     // Same key is reused across every prospect proposal; the "proposal" field
     // below tells you which one a booking came from.
     FORM_KEY:    "4f4d72eb-936f-4fb0-b26a-09330c0a9fb0"
