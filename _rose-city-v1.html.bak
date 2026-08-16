@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<!--
+  index.html — NextPath Creative proposal page (static build)
+  ---------------------------------------------------------------------
+  This is the BUILD OUTPUT of a per-prospect merge. All copy is final and
+  baked in. To produce the next prospect's version, reskin in two places:
+    1. --brand below (the single color variable; whole page reskins from it)
+    2. The merge values in proposal.js (CFG block) + find/replace the
+       prospect name/city/trade in the copy below.
+  See _copy-deck.md for the canonical merge-field list.
+
+  Structure follows ClientFirst (see STYLEGUIDE.md):
+    section_[name]  →  padding-global padding-section-*  →  container-*
+  Current prospect: Rose City Plumbing · Portland · plumbing
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposal for Rose City Plumbing — NextPath Creative</title>
+  <meta name="description" content="A no-risk landing-page test that turns the Google traffic you already get into booked jobs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/colors_and_type.css" />
+  <link rel="stylesheet" href="assets/proposal.css" />
+  <!-- Single reskin variable: change this one hex to re-theme the whole page. -->
+  <style>:root { --brand: #E11D48; }</style>
+</head>
+<body>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="hdr" id="hdr">
+    <div class="padding-global">
+      <div class="container-large hdr-inner">
+        <div class="brand-lock">
+          <span class="brand-mark">RC</span>
+          <span class="brand-name">Rose City Plumbing</span>
+          <span class="brand-chip">Proposal</span>
+        </div>
+        <div class="hdr-spacer"></div>
+        <a class="hdr-contact" href="sms:+19714195054"><i data-lucide="phone"></i><span class="hdr-contact-label">971-419-5054</span></a>
+        <button class="btn btn-primary btn-sm" data-book>Book a call</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================ 1 · HERO ============================ -->
+    <section class="section_hero" id="top">
+      <div class="padding-global padding-section-large">
+        <div class="container-large">
+          <div class="hero-grid">
+            <div class="hero-inner reveal">
+              <span class="eyebrow">A proposal for Rose City Plumbing</span>
+              <h1 class="display hero-title">More <span class="hl"><span>booked jobs</span></span> from the Google traffic you already get.</h1>
+              <p class="lede hero-lede">
+                I'll build Rose City Plumbing a fast, mobile-first booking page and point your Google listing at it for 30 days — free. Your website stays exactly where it is. If it doesn't bring you more calls, we switch it back. No upfront cost, no contract, no risk.
+              </p>
+              <div class="hero-cta">
+                <button class="btn btn-primary btn-lg" data-book>Book a 15-minute setup call <i data-lucide="arrow-right"></i></button>
+                <a class="btn btn-ghost" href="sms:+19714195054"><i data-lucide="phone"></i> Or call/text 971-419-5054</a>
+              </div>
+              <div class="hero-pillrow">
+                <span class="hero-pill"><i data-lucide="circle-dollar-sign"></i> No upfront cost</span>
+                <span class="hero-pill"><i data-lucide="globe"></i> You keep your site</span>
+                <span class="hero-pill"><i data-lucide="zap"></i> Live in 5 business days</span>
+                <span class="hero-pill"><i data-lucide="undo-2"></i> Switch back anytime</span>
+              </div>
+            </div>
+            <div class="reveal hero-art-wrap" style="transition-delay:120ms;">
+              <svg class="hero-art" viewBox="0 0 450 470" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A phone showing a booking page, a Google rating, and a confirmed booking.">
+                <circle cx="250" cy="214" r="188" fill="var(--brand)" opacity="0.06"></circle>
+                <circle cx="320" cy="120" r="78" fill="var(--brand)" opacity="0.05"></circle>
+                <rect x="150" y="48" width="206" height="398" rx="32" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.4"></rect>
+                <rect x="218" y="63" width="70" height="9" rx="4.5" fill="var(--ink)"></rect>
+                <circle cx="180" cy="112" r="9" fill="var(--brand)"></circle>
+                <rect x="197" y="106" width="74" height="7" rx="3.5" fill="var(--ink)" opacity="0.85"></rect>
+                <rect x="197" y="118" width="46" height="6" rx="3" fill="var(--ink)" opacity="0.28"></rect>
+                <rect x="180" y="150" width="128" height="9" rx="4.5" fill="var(--ink)" opacity="0.8"></rect>
+                <rect x="180" y="167" width="92" height="9" rx="4.5" fill="var(--ink)" opacity="0.8"></rect>
+                <rect x="180" y="196" width="34" height="32" rx="9" fill="var(--brand)"></rect>
+                <rect x="221" y="196" width="34" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="262" y="196" width="34" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="303" y="196" width="23" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="180" y="240" width="68" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="258" y="240" width="68" height="32" rx="9" fill="var(--brand)"></rect>
+                <rect x="180" y="280" width="68" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="258" y="280" width="68" height="32" rx="9" fill="var(--brand-tint)"></rect>
+                <rect x="180" y="336" width="146" height="36" rx="10" fill="var(--ink)"></rect>
+                <rect x="223" y="351" width="60" height="7" rx="3.5" fill="var(--paper)"></rect>
+                <g>
+                  <rect x="40" y="150" width="152" height="70" rx="15" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"></rect>
+                  <path transform="translate(56, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(74, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(92, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(110, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <path transform="translate(128, 168)" d="M6 0.6 L7.5 4.3 L11.5 4.6 L8.4 7.1 L9.4 11 L6 8.8 L2.6 11 L3.6 7.1 L0.5 4.6 L4.5 4.3 Z" fill="var(--brand)"></path>
+                  <rect x="56" y="192" width="104" height="7" rx="3.5" fill="var(--ink)" opacity="0.26"></rect>
+                  <rect x="56" y="204" width="64" height="6" rx="3" fill="var(--ink)" opacity="0.18"></rect>
+                </g>
+                <g>
+                  <circle cx="334" cy="372" r="28" fill="var(--brand)" stroke="var(--paper)" stroke-width="4"></circle>
+                  <path d="M322 372 l8 8 l15 -17" stroke="var(--paper)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 2 · THE SHORT VERSION ============================ -->
+    <section class="section_short surface-alt divider-top">
+      <div class="padding-global padding-section-small">
+        <div class="container-large">
+          <div class="short-card reveal">
+            <div class="short-grid">
+              <div class="short-lead">
+                <span class="eyebrow">First, the short version</span>
+                <h2 class="h-lg short-heading">No catch. Here it is in plain terms.</h2>
+                <p class="short-note"><i data-lucide="pen-line"></i> A note from Simon Chen</p>
+              </div>
+              <div class="short-body prose">
+                <div class="stack-4">
+                  <p class="body">Thanks for taking my call. As promised, here's everything in writing, so you can look it over whenever it suits you and you've got my details either way.</p>
+                  <p class="body">Here's the whole offer in plain terms: I build Rose City Plumbing one focused page designed to turn visitors into booked jobs. For the test, the "website" button on your Google listing points to that page instead of your current site — so the people already finding you on Google land somewhere built to get them to call. Your existing website stays live and untouched the entire time.</p>
+                  <p class="body">The test runs 30 days at no cost. If it brings you more work, we talk about keeping it. If it doesn't, I switch your Google link back and you've lost nothing but the minute it took to set up.</p>
+                  <p class="body">No catch. This is how I earn new clients — I'd rather prove it works than ask you to take my word for it.</p>
+                </div>
+                <div class="signoff">
+                  <span class="av">SC</span>
+                  <div class="who"><b>Simon Chen</b><span>NextPath Creative</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 3 · WHY THIS WORKS ============================ -->
+    <section class="section_why" id="why">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="why-inner">
+            <div class="reveal">
+              <div class="stack-4" style="margin-bottom:8px;">
+                <span class="eyebrow">Why this works</span>
+                <h2 class="h-lg why-heading">The people tapping your Google listing are ready right now.</h2>
+              </div>
+            </div>
+            <div class="stack-4 reveal">
+              <p class="body why-p" style="margin-top:8px;">
+                When someone searches "plumbing near me" or "plumbing in Portland" and taps the website link on your Google listing, they're not browsing. They've got a problem and they're deciding who to call — often that same day.
+              </p>
+            </div>
+
+            <div class="stat-grid stat-grid-2" style="margin-top:28px;margin-bottom:28px;">
+              <div class="reveal stat-card">
+                <div class="stat-num"><span class="countup" data-count="76">76</span><span class="u">%</span></div>
+                <div class="stat-desc">of people who search for something nearby on their phone visit a business within a day.</div>
+                <div class="stat-src"><i data-lucide="link"></i> Think with Google</div>
+              </div>
+              <div class="reveal stat-card">
+                <div class="stat-num"><span class="stat-pre">About </span><span class="countup" data-count="28">28</span><span class="u">%</span></div>
+                <div class="stat-desc">of those nearby searches end in a purchase.</div>
+                <div class="stat-src"><i data-lucide="link"></i> Think with Google</div>
+              </div>
+            </div>
+
+            <div class="stack-4 reveal">
+              <p class="body why-p">That tap is the most valuable moment you get online. The only thing that matters is what happens in the few seconds after it.</p>
+              <p class="body why-p">Most trades websites were built to look fine on a desktop years ago. On a phone, they load slowly, bury the phone number, and make someone pinch and zoom to find anything. And people don't wait around:</p>
+            </div>
+
+            <div style="margin-top:28px;margin-bottom:28px;">
+              <div class="reveal stat-card stat-card-wide">
+                <div class="stat-num"><span class="countup" data-count="53">53</span><span class="u">%</span></div>
+                <div>
+                  <div class="stat-desc" style="font-size:17px;">of visitors leave a mobile page if it takes longer than 3 seconds to load.</div>
+                  <div class="stat-src" style="margin-top:8px;"><i data-lucide="link"></i> Google</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stack-4 reveal">
+              <p class="body why-p">When a ready-to-book customer hits a slow or cluttered page, they don't try harder — they tap back to Google and call the next plumber on the list. You earned the click and lost the job in the same ten seconds. A landing page exists so that doesn't happen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 4 · WHAT YOU'RE GETTING ============================ -->
+    <section class="section_what surface-alt divider-top" id="what">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <div class="feat-grid">
+            <div class="what_content-left">
+              <div class="reveal">
+                <div class="stack-4" style="margin-bottom:8px;">
+                  <span class="eyebrow">What you're getting</span>
+                  <h2 class="h-lg">One page with one job — getting you the call.</h2>
+                </div>
+                <p class="body" style="margin-top:18px;">
+                  It's not a website with menus and pages to wander through. It's a single page that answers every question a customer has, fast, and gives them one easy way to act. On it:
+                </p>
+              </div>
+              <div class="feat-list reveal" style="margin-top:18px;">
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="calendar-check"></i></div>
+                  <div class="feat-body"><b>A booking widget right at the top</b><span>they pick a time, you confirm by text. No filling out a form that vanishes into nowhere.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="shield-check"></i></div>
+                  <div class="feat-body"><b>Your reviews, license number, and years in business up front</b><span>where a stranger decides whether to trust you.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="image"></i></div>
+                  <div class="feat-body"><b>Real photos</b><span>of you, your team, and your actual work.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="receipt-text"></i></div>
+                  <div class="feat-body"><b>Straight talk on pricing and what to expect</b><span>the stuff that makes someone comfortable enough to call.</span></div>
+                </div>
+                <div class="feat">
+                  <div class="feat-ic"><i data-lucide="phone"></i></div>
+                  <div class="feat-body"><b>A tappable phone number on every screen</b><span>for the folks who'd rather just call.</span></div>
+                </div>
+              </div>
+              <div class="reveal">
+                <p class="body" style="margin-top:22px;">
+                  Everything on the page points at one thing: booking you. Nothing on it sends them somewhere else.
+                </p>
+              </div>
+            </div>
+
+            <div class="reveal">
+              <div class="phone-wrap">
+                <div class="phone">
+                  <div class="phone-pill"></div>
+                  <span class="phone-badge"><i></i> Live</span>
+                  <div class="phone-screen">
+                    <iframe src="demo/sample.html?b=plumbing" title="Live sample landing page" loading="lazy"></iframe>
+                  </div>
+                </div>
+                <p class="phone-cap"><b>This is the actual page.</b> Scroll it, tap the scheduler — it really works.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 5 · HOW THE TEST WORKS ============================ -->
+    <section class="section_how" id="how">
+      <div class="padding-global padding-section-medium">
+        <div class="container-small">
+          <div class="reveal">
+            <div class="stack-4" style="margin-bottom:8px;">
+              <span class="eyebrow">How the test works</span>
+              <h2 class="h-lg">It's reversible, and it changes exactly one thing.</h2>
+            </div>
+          </div>
+          <div class="steps reveal" style="margin-top:30px;">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <b>I build the page.</b>
+                <p>Your logo, your colors, your reviews, real photos. Ready in 5 business days from the day you say go.</p>
+              </div>
+            </div>
+            <div class="step is-key">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <b>We point your Google link at it.</b>
+                <p>The "website" button on your Google Business Profile points to the new page for the test. That's the only change — it takes about a minute, and it can be undone just as fast.</p>
+                <span class="step-tag"><i data-lucide="git-commit-horizontal"></i> Only one thing changes</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <b>You keep your site.</b>
+                <p>Your current website stays live and untouched at its own address. I even link to it from the new page, so nothing disappears.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <b>We see what happens.</b>
+                <p>Over 30 days, you watch whether the calls and bookings pick up. Then you decide.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="card" style="margin-top:8px;display:flex;gap:14px;align-items:center;background:var(--surface-alt);">
+              <div class="feat-ic" style="background:var(--brand-tint);"><i data-lucide="lock-open"></i></div>
+              <p class="body" style="margin:0;">At no point are you locked in, and at no point does your existing site go away.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 6 · THE TERMS ============================ -->
+    <section class="section_terms surface-alt divider-top" id="terms">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="reveal">
+            <div class="stack-4 center" style="max-width:34ch;margin-left:auto;margin-right:auto;margin-bottom:8px;">
+              <span class="eyebrow" style="justify-content:center;">The terms, in writing</span>
+              <h2 class="h-lg">What it costs to find out: nothing.</h2>
+            </div>
+          </div>
+          <div class="terms-grid reveal" style="margin-top:36px;max-width:880px;margin-left:auto;margin-right:auto;">
+            <div class="terms-card">
+              <h3>What you get</h3>
+              <div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>A custom landing page built around your brand</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>The booking widget set up and ready to take requests</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>Your Google link switched over and watched for 30 days</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>Your existing website left exactly as it is</span></div>
+              </div>
+            </div>
+            <div class="terms-card cost">
+              <h3>What it costs</h3>
+              <div class="price-big"><span class="n">$0</span><span class="l">upfront</span></div>
+              <div style="margin-top:8px;">
+                <div class="terms-li"><i data-lucide="check"></i> <span>No contract for the test</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>If it works and you want to keep it — or go further with a full site — we agree on simple monthly pricing then. Your call, no pressure.</span></div>
+                <div class="terms-li"><i data-lucide="check"></i> <span>If it doesn't, I switch your Google link back and we shake hands.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 7 · TIMELINE ============================ -->
+    <section class="section_timeline" id="timeline">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <div class="reveal">
+            <div class="stack-4 center" style="max-width:34ch;margin-left:auto;margin-right:auto;margin-bottom:8px;">
+              <span class="eyebrow" style="justify-content:center;">Timeline</span>
+              <h2 class="h-lg">From "yes" to live in 5 business days.</h2>
+            </div>
+          </div>
+          <div class="timeline reveal" style="margin-top:36px;">
+            <div class="tl-card">
+              <div class="tl-when"><span class="num">1</span> Day one</div>
+              <b>You say go.</b>
+              <p>Send your logo, a few photos, and your basic details. I make that part easy.</p>
+            </div>
+            <div class="tl-card">
+              <div class="tl-when"><span class="num">2</span> The next few days</div>
+              <b>I build the page.</b>
+              <p>I build the page and send it to you to review.</p>
+            </div>
+            <div class="tl-card">
+              <div class="tl-when"><span class="num">3</span> Go-live</div>
+              <b>The test begins.</b>
+              <p>Once you're happy with it, we point your Google link over and the test begins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 8 · WHO YOU'D BE WORKING WITH ============================ -->
+    <section class="section_who surface-alt divider-top" id="who">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <div class="who_component">
+        <div class="bio-grid">
+          
+            <div class="reveal">
+              <div class="bio-card-portrait">
+                <div class="bio-portrait-ph">
+                  <div class="av">SC</div>
+                  <div class="lbl">Photo · Simon</div>
+                </div>
+              </div>
+            </div>
+            <div class="reveal">
+              <span class="eyebrow">Who you'd be working with</span>
+              <h2 class="h-lg" style="margin-top:14px;">Simon, from NextPath Creative.</h2>
+              <div class="stack-4" style="margin-top:18px;">
+                <p class="body">I build these pages for plumbing businesses, one at a time. I'm not an agency with a call center — when you text the number, you get me. I'd rather earn a handful of clients who stay because the work pays for itself than sign a hundred onto contracts they regret.</p>
+                <p class="body">And you don't have to take my word for any of it. Here's a live page you can try yourself — tap through it like a customer would, and book a test visit to feel how the whole thing works.</p>
+              </div>
+            </div>
+          </div>
+  <div class="reveal" style="margin-top:48px;">
+            <div class="row" style="justify-content:space-between;align-items:flex-end;margin-bottom:18px;">
+              <div>
+                <span class="eyebrow">Try one yourself</span>
+                <h3 class="h-md" style="margin-top:12px;">Real sample pages. Tap in and play with the scheduler.</h3>
+              </div>
+            </div>
+            <div class="gallery">
+              <a class="demo-card" href="demo/sample.html?b=plumbing" target="_blank" rel="noopener">
+                <div class="demo-chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="url">rosecityplumbing.com</div>
+                </div>
+                <div class="demo-thumb">
+                  <img src="screenshots/demo-plumbing.png" alt="Rose City Plumbing sample landing page" loading="lazy" />
+                  <div class="demo-play"><span><i data-lucide="mouse-pointer-click"></i> Open live demo</span></div>
+                </div>
+                <div class="demo-meta">
+                  <div><b>Rose City Plumbing</b><span>Plumbing · sample</span></div>
+                  <span class="demo-live"><i></i> Live</span>
+                </div>
+              </a>
+              <a class="demo-card" href="demo/sample.html?b=hvac" target="_blank" rel="noopener">
+                <div class="demo-chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="url">cascadeheatingair.com</div>
+                </div>
+                <div class="demo-thumb">
+                  <img src="screenshots/demo-hvac.png" alt="Cascade Heating & Air sample landing page" loading="lazy" />
+                  <div class="demo-play"><span><i data-lucide="mouse-pointer-click"></i> Open live demo</span></div>
+                </div>
+                <div class="demo-meta">
+                  <div><b>Cascade Heating &amp; Air</b><span>Heating &amp; Air · sample</span></div>
+                  <span class="demo-live"><i></i> Live</span>
+                </div>
+              </a>
+              <a class="demo-card" href="demo/sample.html?b=electrical" target="_blank" rel="noopener">
+                <div class="demo-chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="url">bridgetownelectric.com</div>
+                </div>
+                <div class="demo-thumb">
+                  <img src="screenshots/demo-electrical.png" alt="Bridgetown Electric sample landing page" loading="lazy" />
+                  <div class="demo-play"><span><i data-lucide="mouse-pointer-click"></i> Open live demo</span></div>
+                </div>
+                <div class="demo-meta">
+                  <div><b>Bridgetown Electric</b><span>Electrical · sample</span></div>
+                  <span class="demo-live"><i></i> Live</span>
+                </div>
+              </a>
+            </div>
+            <div style="margin-top:24px;">
+              <a class="btn btn-primary btn-lg" href="demo/sample.html?b=plumbing" target="_blank" rel="noopener">See a live example <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </div>
+
+            </div>
+          </div>
+
+
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 9 · STRAIGHT ANSWERS (FAQ) ============================ -->
+    <section class="section_faq" id="faq">
+      <div class="padding-global padding-section-medium">
+        <div class="container-small">
+          <div class="reveal">
+            <div class="stack-4" style="max-width:34ch;margin-bottom:8px;">
+              <span class="eyebrow">Straight answers</span>
+              <h2 class="h-lg">The questions you're probably already asking.</h2>
+            </div>
+          </div>
+          <div class="faq reveal" style="margin-top:24px;">
+            <div class="faq-item open">
+              <button class="faq-q" aria-expanded="true">
+                <span>Do I lose my current website?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">No. It stays live, untouched, at its own address the whole time. The only change is which page your Google listing points to — and that flips back in seconds.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What does it actually cost?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Nothing upfront, and nothing during the test. If you decide to keep it afterward, we agree on simple pricing then. No surprises.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>What if it doesn't bring in any work?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Then I switch your Google link back to your old site and we part as friends. You're out nothing but the few minutes it took to set up.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Is my Google listing safe?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Yes. I never touch your reviews, your ranking, or your profile itself — only the single website-link field, with your okay.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Why would you do this for free?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Because it's the fastest way to prove I'm worth paying for. If the page books you jobs, you'll want to keep it. If it doesn't, you were right not to risk anything.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Am I locked into a contract?</span>
+                <span class="faq-ic"><i data-lucide="plus"></i></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">No contract for the test. After that, only if you choose to continue.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 10 · FINAL CTA ============================ -->
+    <section class="section_final surface-ink" id="final">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium finalcta">
+          <div class="reveal">
+            <span class="eyebrow" style="justify-content:center;">Let's do it</span>
+            <h2 class="h-xl" style="margin-top:16px;color:#fff;">Want to see what it would do for Rose City Plumbing?</h2>
+            <p class="lede">The whole thing starts with a 15-minute call — I grab your details and answer anything I didn't cover here. No pitch, no pressure. If it's not for you, that's a perfectly fine answer.</p>
+            <div class="finalcta-actions">
+              <button class="btn btn-brand btn-lg" data-book><i data-lucide="calendar-check"></i> Book a 15-minute setup call</button>
+              <p class="finalcta-sub"><span>Or just <a href="mailto:SimonC@NextPathCreativeLLC.com">reply to my email</a>.</span><span>Or call/text me at <a href="sms:+19714195054">971-419-5054</a>.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ 11 · FOOTER ============================ -->
+  <footer class="foot">
+    <div class="padding-global">
+      <div class="container-large foot-inner">
+        <div class="foot-top">
+          <div class="foot-brand">
+            <span class="brand-mark" style="background:#fff;color:var(--ink);">N</span>
+            <span style="font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.02em;color:#fff;">NextPath Creative</span>
+          </div>
+          <div class="foot-contact">
+            <span>Simon</span>
+            <a href="sms:+19714195054">971-419-5054</a>
+            <a href="mailto:SimonC@NextPathCreativeLLC.com">SimonC@NextPathCreativeLLC.com</a>
+          </div>
+        </div>
+        <div class="foot-fine">
+          Prepared for Rose City Plumbing. Your current website stays live at its own address throughout the test.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ STICKY CALL BAR (mobile) ============================ -->
+  <div class="callbar">
+    <div class="txt"><b>Book a 15-minute setup call</b><span>No pitch · no pressure · Simon from NextPath Creative</span></div>
+    <a class="cta" href="#" data-book><i data-lucide="calendar-check"></i> Book</a>
+  </div>
+
+  <!-- ============================ BOOKING MODAL (built by JS) ============================ -->
+  <div id="modal-root"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="proposal.js"></script>
+</body>
+</html>
