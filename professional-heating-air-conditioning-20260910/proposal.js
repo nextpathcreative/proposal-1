@@ -11,8 +11,8 @@
   "use strict";
 
   var CFG = {
-    CLIENT:      "PDX Heating & Cooling",
-    CITY:        "Portland",
+    CLIENT:      "Professional Heating & Air Conditioning",
+    CITY:        "Pleasant Grove",
     MY_BUSINESS: "NextPath Creative",
     MY_NAME:     "Simon",
     MY_FULLNAME: "Simon Chen",
