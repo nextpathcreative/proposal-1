@@ -12,7 +12,7 @@
 
   var CFG = {
     CLIENT:      "PDX Heating & Cooling",
-    CITY:        "Portland",
+    MY_CITY:        "Portland",
     MY_BUSINESS: "NextPath Creative",
     MY_NAME:     "Simon",
     MY_FULLNAME: "Simon Chen",
@@ -208,7 +208,7 @@
         '<div class="sched-eyebrow"><i data-lucide="calendar-check"></i> 30-minute walk-through</div>' +
         '<div class="sched-title">Pick a time. I\'ll confirm by text within the hour.</div>' +
         '</div></div>';
-      s += '<div class="sched-host"><div class="av">SC</div><div class="meta"><b>' + esc(CFG.MY_FULLNAME) + '</b><span>' + esc(CFG.MY_BUSINESS) + ' · ' + esc(CFG.CITY) + '</span></div></div>';
+      s += '<div class="sched-host"><div class="av">SC</div><div class="meta"><b>' + esc(CFG.MY_FULLNAME) + '</b><span>' + esc(CFG.MY_BUSINESS) + ' · ' + esc(CFG.MY_CITY) + '</span></div></div>';
       s += '<div class="sched-days">';
       DAYS.forEach(function (d, i) {
         s += '<button type="button" class="sched-day' + (i === state.dayIdx ? " on" : "") + '" data-day="' + i + '"><span class="dn">' + dn(d) + '</span><span class="dd">' + d.getDate() + '</span></button>';
